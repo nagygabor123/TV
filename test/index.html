@@ -10,15 +10,30 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  
-    <video class="video-js vjs-custom-theme " data-setup="{}" autoplay muted loop controls>
-         <source src="istockphoto-1295217100-640_adpp_is.mp4" type="video/mp4" />
-
+  <h1>Hunflix</h1>
+  <div class="container">
+    <div class="video-container">
+      <div class="video"><video src="istockphoto-1295217100-640_adpp_is.mp4" muted ></video></div>
+      <div class="video"><video src="istockphoto-1295217100-640_adpp_is.mp4" muted ></video></div>
+      <div class="video"><video src="istockphoto-1295217100-640_adpp_is.mp4" muted ></video></div>
+      <div class="video"><video src="istockphoto-1295217100-640_adpp_is.mp4" muted ></video></div>
+      <div class="video"><video src="istockphoto-1295217100-640_adpp_is.mp4" muted ></video></div>
+      <div class="video"><video src="istockphoto-1295217100-640_adpp_is.mp4" muted ></video></div>
+      <div class="video"><video src="istockphoto-1295217100-640_adpp_is.mp4" muted ></video></div>
+    </div>
+    <div class="popup-video">
       
-    </video>
-  
-<script src="https://vjs.zencdn.net/7.11.4/video.min.js"></script>
-
-  
+      <video src="istockphoto-1295217100-640_adpp_is.mp4" muted autoplay controls></video>
+    </div>
+  </div>
+  <script>
+    document.querySelectorAll('video-containe video').forEach(vid => {
+      vid.onclick = () => {
+        document.querySelector('popup-video').style.display = 'block';
+        document.querySelector('popup-video video').src = vid.getAttribute('src')
+      }
+    });
+   
+  </script>
 </body>
 </html>
