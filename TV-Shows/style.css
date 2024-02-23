@@ -1,0 +1,61 @@
+.container {
+    max-width: 180px;
+    margin: 0;
+    margin-top: 30px;
+}
+  
+.youtube-link .icon {
+    width: 20px;
+    color: red;
+    display: flex;
+    flex-shrink: 0;
+}
+
+.youtube-link {
+    font-size: 18px;
+    font-family: "Roboto","sans-serif";
+    color: black;
+    line-height: 1.8;
+    display: flex;
+    gap: 10px;
+    margin: 8px  0;
+    padding: 4px 32px;
+    cursor: pointer;
+    transition: all 400ms ease;
+}
+
+.youtube-link:hover {
+    background: #efefef;
+    border-radius: 5px;
+}
+
+.youtube-player-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.youtube-player-overlay.active { 
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.youtube-player-popup {
+    position: fixed;
+    top: 5%;
+    width: 80%;
+    left: 50%;
+    transform: translate(-50%,-100%);
+    transition: all 400ms ease;
+}
+
+.youtube-player-overlay.active .youtube-player-popup{ 
+    transform: translate(-50%,0);
+}
+
+.youtube-player-popup iframe {
+    width: 100%;
+    aspect-ratio: 16/9;
+}
