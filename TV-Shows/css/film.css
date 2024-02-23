@@ -1,3 +1,23 @@
+body {
+    background-color: black;
+    font-family: "Roboto","sans-serif";
+}
+
+.back {
+    height: 50px;
+    color: red;
+    margin-left: 5%;
+    padding: 8px;
+    border: 2px solid transparent;
+}
+
+.back:hover {
+    border-radius: 8px;
+    padding: 8px;
+    border: 2px solid red;
+    transition: all 400ms ease;
+}
+
 .container {
     max-width: 180px;
     margin: 0;
@@ -5,28 +25,35 @@
 }
   
 .youtube-link .icon {
-    width: 20px;
+    width: 45px;
     color: red;
     display: flex;
     flex-shrink: 0;
 }
 
 .youtube-link {
-    font-size: 18px;
-    font-family: "Roboto","sans-serif";
-    color: black;
-    line-height: 1.8;
+    font-size: 20px;
+    color: red;
+    line-height: 2;
     display: flex;
     gap: 10px;
-    margin: 8px  0;
-    padding: 4px 32px;
+    margin-left: 10%;
+    padding: 4px 15px;
     cursor: pointer;
     transition: all 400ms ease;
+    border: 2px solid red;
+    border-radius: 8px;
 }
 
 .youtube-link:hover {
-    background: #efefef;
-    border-radius: 5px;
+    transition: all 400ms ease;
+    background: red;
+    color: white;
+    .icon{
+        color: white;
+    }
+    
+    
 }
 
 .youtube-player-overlay {
