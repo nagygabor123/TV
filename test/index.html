@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Change Div Content on Button Click</title>
+<link rel="stylesheet" href="film.css">
+</head>
+<body>
+
+<a href="film1.html"></a>
+<a href="film1.html"></a>
+<button onclick="film1()" >film1</button>
+<button onclick="film2()" >film2</button>
+
+<script>
+  let link = "h"
+  links ="s"
+  
+  function film1(){
+    links = "yVdMF09yJZY"
+    veg();
+  }
+  
+  function film2(){
+    links = "c3ggouGt76g"
+    veg();
+  }
+
+  function veg() {
+    localStorage.setItem(link, links);
+  }
+  
+  let v = localStorage.getItem(link)
+  console.log(v)
+</script>
+
+
+
+
+
+</body>
+</html>
