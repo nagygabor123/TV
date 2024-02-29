@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Netflix 1.1</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="package/css/swiper.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <div class="channel-logo" data-animation-in="fadeInLeft" data-delay-in="0.5">
+    <img src="./img/logo.png" class="c-logo" alt="" />
+  </div>
+
+  <div class="netflix-slider">
+    <h2>Popular on Netflix</h2>
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div onclick="myFunction(this);" class="swiper-slide"><img src="img/1.jpg" alt="wyEOwHrpZH4"></div> <!--<a href="film1.html"> </a>-->
+        <!--<div class="swiper-slide"><a href="film1.html"><img src="img/2.jpg" alt="Movie Title"></a></div>
+        <div class="swiper-slide"><a href="film1.html"><img src="img/3.jpg" alt="Movie Title"></a></div>
+        <div class="swiper-slide"><a href="film1.html"><img src="img/4.jpg" alt="Movie Title"></a></div>
+        <div class="swiper-slide"><a href="film1.html"><img src="img/5.jpg" alt="Movie Title"></a></div>
+        <div class="swiper-slide"><a href="film1.html"><img src="img/6.jpg" alt="Movie Title"></a></div>
+        <div class="swiper-slide"><a href="film1.html"><img src="img/7.jpg" alt="Movie Title"></a></div>
+        <div class="swiper-slide"><a href="film1.html"><img src="img/8.jpg" alt="Movie Title"></a></div>
+        <div class="swiper-slide"><a href="film1.html"><img src="img/9.jpg" alt="Movie Title"></a></div>
+        <div class="swiper-slide"><a href="film1.html"><img src="img/10.jpg" alt="Movie Title"></a></div>-->
+      </div>
+      
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+  </div>
+
+  <div class="netflix-slider">
+    <h2>Continue watching...</h2>
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+		<div onclick="myFunction(this);" class="swiper-slide"><a href="film1.html"><img src="img/1.jpg" alt="wyEOwHrpZH4"></a></div>
+        <!--<div class="swiper-slide"><a href="film1.html"><img src="img/2.jpg" alt="Movie Title"></a></div>
+        <div class="swiper-slide"><a href="film1.html"><img src="img/3.jpg" alt="Movie Title"></a></div>
+        <div class="swiper-slide"><a href="film1.html"><img src="img/4.jpg" alt="Movie Title"></a></div>
+        <div class="swiper-slide"><a href="film1.html"><img src="img/5.jpg" alt="Movie Title"></a></div>
+        <div class="swiper-slide"><a href="film1.html"><img src="img/6.jpg" alt="Movie Title"></a></div>
+        <div class="swiper-slide"><a href="film1.html"><img src="img/7.jpg" alt="Movie Title"></a></div>
+        <div class="swiper-slide"><a href="film1.html"><img src="img/8.jpg" alt="Movie Title"></a></div>
+        <div class="swiper-slide"><a href="film1.html"><img src="img/9.jpg" alt="Movie Title"></a></div>
+        <div class="swiper-slide"><a href="film1.html"><img src="img/10.jpg" alt="Movie Title"></a></div>-->
+      </div>
+      
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+  </div>
+
+  <div class="netflix-slider">
+    <h2>Popular on Netflix</h2>
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><a href="film1.html"><img src="img/1.jpg" alt="Movie Title"></a></div>
+        <div class="swiper-slide"><a href="film1.html"><img src="img/2.jpg" alt="Movie Title"></a></div>
+        <div class="swiper-slide"><a href="film1.html"><img src="img/3.jpg" alt="Movie Title"></a></div>
+        <div class="swiper-slide"><a href="film1.html"><img src="img/4.jpg" alt="Movie Title"></a></div>
+        <div class="swiper-slide"><a href="film1.html"><img src="img/5.jpg" alt="Movie Title"></a></div>
+        <div class="swiper-slide"><a href="film1.html"><img src="img/6.jpg" alt="Movie Title"></a></div>
+        <div class="swiper-slide"><a href="film1.html"><img src="img/7.jpg" alt="Movie Title"></a></div>
+        <div class="swiper-slide"><a href="film1.html"><img src="img/8.jpg" alt="Movie Title"></a></div>
+        <div class="swiper-slide"><a href="film1.html"><img src="img/9.jpg" alt="Movie Title"></a></div>
+        <div class="swiper-slide"><a href="film1.html"><img src="img/10.jpg" alt="Movie Title"></a></div>
+      </div>
+      
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+  </div>
+
+
+  <div class="container">
+
+	<span onclick="this.parentElement.style.display='none'" class="closebtn">
+        <div>✖ BEZÁRÁS</div>
+    </span>
+  
+
+    <img id="expandedImg">
+
+	<div id="imgtext" onclick="myFunkcio()"></div>
+
+	<div id="btn"></div>
+
+
+  <!-- Swiper JS -->
+  <script src="package/js/swiper.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper('.swiper-container', {
+      slidesPerView: 6,
+      spaceBetween: 10,
+      slidesPerGroup: 2,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+
+
+
+	function myFunction(imgs) {
+	var expandImg = document.getElementById("expandedImg");
+	var imgText = document.getElementById("imgtext");
+	var btn = document.getElementById("btn");
+	expandImg.src = imgs.src;
+	imgText.innerHTML = imgs.alt;
+	expandImg.parentElement.style.display = "block";
+	}
+
+	function myFunkcio() {
+	  var x = document.getElementById("vasarlas");
+	
+	  var expandImg = document.getElementById("expandedImg");
+	
+	 var Img = document.getElementById("Img");
+
+	  document.getElementById("Img").src = expandImg.src;
+	
+		x.style.display = "block";
+	
+	}
+	
+	
+	function vasarlas() {
+		var x = document.getElementById("vasarlas2");
+	
+		var Img = document.getElementById("Img");
+	
+		document.getElementById("Img2").src = Img.src;
+	
+		x.style.display = "block";
+	}
+	
+	function letolt() {
+	
+		var Img2 = document.getElementById("Img2");
+		document.getElementById("form_button2").href = Img2.src;
+	}
+	/*
+	function show() {
+				var expandImg = document.getElementById("expandedImg");
+				var imageS = document.getElementById("image");
+				imageS.src = expandImg.src;
+				document.getElementById('image')
+					.style.display = "block";
+				document.getElementById('imgtextss')
+					.style.display = "none";
+	}*/
+	/*
+	function myFunction() {
+		  alert("A vásárlás megtörtént");
+		  }*/
+	
+
+
+  </script>
+</body>
+</html>

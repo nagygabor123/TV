@@ -2,7 +2,7 @@ const YTPlayerOverlay = document.querySelector(".youtube-player-overlay");
 const YTLinks = document.querySelectorAll(".youtube-link");
 const YTPalyerPopup = document.querySelector(".youtube-player-popup iframe")
 
-let links = "wyEOwHrpZH4";
+//let links = "wyEOwHrpZH4";
 
 YTLinks.forEach((link) => {
     link.addEventListener("click", () => {
