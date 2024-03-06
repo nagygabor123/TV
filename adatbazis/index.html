@@ -1,4 +1,3 @@
-!DOCTYPE html>
 <html lang="en">
    <head>
       
@@ -57,7 +56,7 @@
         for person in cur.fetchall():
             id,csaladnev, keresztnev,szuletes,szulhey,foglalkozas = person
             szemelyek.append({ 'id' : id,'csaladnev' : csaladnev,'keresztnev' : keresztnev,'szuletes' : szuletes,'szulhey' : szulhey,'foglalkozas' : foglalkozas})
-        pyscript.write(szemelyek,s)
+            pyscript.write({ 'id' : id,'csaladnev' : csaladnev,'keresztnev' : keresztnev,'szuletes' : szuletes,'szulhey' : szulhey,'foglalkozas' : foglalkozas},s)
       </py-script> 
       <div class="container">
         <p id="s"></p>
