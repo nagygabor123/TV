@@ -140,8 +140,8 @@ box-sizing: border-box;
     }
 
 body {
-font-family: "Neue Montreal";
-background: rgb(255, 255, 255);
+/*font-family: "Neue Montreal";*/
+background: rgb(0, 0, 0);
 }
 
 .kutya {
@@ -190,7 +190,7 @@ overflow: hidden;
 
 nav {
 letter-spacing:0.7px;
-      background-color: white;
+      background-color: rgb(0, 0, 0);
       position: fixed;
       /*font-weight: 400;*/
       width: 100%;
@@ -208,7 +208,7 @@ letter-spacing:0.7px;
 .footer {
   bottom: 0;
 letter-spacing:0.7px;
-      background-color: white;
+      background-color: rgb(0, 0, 0);
       position: fixed;
       /*font-weight: 400;*/
       width: 100%;
@@ -258,7 +258,7 @@ top: 0;
 left: 0;
 right: 0;
 bottom: 0;
-background-color: rgb(255, 255, 255); 
+background-color: rgb(0, 0, 0); 
 z-index: 2; 
 cursor: pointer; 
 }
@@ -272,7 +272,7 @@ top: 0;
 left: 0;
 right: 0;
 bottom: 0;
-background-color: rgb(255, 255, 255); 
+background-color: rgb(0, 0, 0); 
 z-index: 2; 
 cursor: pointer; 
 }
@@ -286,13 +286,13 @@ top: 0;
 left: 0;
 right: 0;
 bottom: 0;
-background-color: rgb(255, 255, 255); 
+background-color: rgb(0, 0, 0); 
 z-index: 2; 
 cursor: pointer; 
 }
 .closebtn {
 letter-spacing:0.7px;
-  background-color: white;
+  background-color: rgb(0, 0, 0);
   /*font-weight: 400;*/
 padding: 0.7rem;
   height: 40px;
@@ -326,15 +326,30 @@ a:active {
 color: rgb(0, 0, 0);
 }
 
-
-
+/*position: absolute;*/
+/*
 #expandedImg{
+  
+  box-shadow: 10px 10px 5px rgb(212, 70, 255) inset;
+  width: 190px;
+height: 5000px;
+left: 0px;
+top: 20px;
+}*/
+
+
+.expandAtmenet{
+  width: 60%; height: 60%;
   position: absolute;
-  width: 900px;
-height: 700px;
-left: 200px;
-top: 90px;
 }
+
+.expandKep{
+  width: 100%; height: 60%;
+  position: absolute;
+  /*padding: 1em;*/
+
+}
+
 
 
 
