@@ -106,17 +106,33 @@
   <div class="containerkee">
     <div id="imgaltText">
     </div>
-    <button class="button-5" style="background-color: white; color: black;">Lejátszás</button>
+    <button class="button-5 youtube-link" style="background-color: white; color: black;">Lejátszás</button>
     <button class="button-5" style="background-color: grey; color: white;">Több infó</button>
   </div>
 
 
     <div>
       <a class="navocska" style="color: #e50914;" href="index.html">MAFILM</a> <a class="navocska2"href="">Főoldal</a> <a class="navocska2"href="">Filmek</a> <a class="navocska2"href="">Sorozatok</a> <a class="navocska2"href="">Listám</a>
-  </div>
+    </div>
     <span onclick="this.parentElement.style.display='none'" class="closebtn">
       <div>➔ Vissza</div>
   </span>
+  
+
+    <div class="youtube-link" data-link="wyEOwHrpZH4"> <!--data-link="wyEOwHrpZH4"-->
+        LEJÁTSZÁS
+    </div>
+</div>
+
+
+<div class="youtube-player-overlay ">
+    <div class="youtube-player-popup">
+        <iframe src="https://www.youtube.com/embed/" 
+        title="A YouTube video" 
+        frameborder="0" 
+        allowfullscreen></iframe>
+    </div>
+</div>
 
 
 	<!--<div id="btn"></div>-->
@@ -190,6 +206,45 @@
 		  alert("A vásárlás megtörtént");
 		  }*/
 	
+
+
+
+
+      var swiper = new Swiper('.swiper-container', {
+      slidesPerView: 6,
+      spaceBetween: 10,
+      slidesPerGroup: 2,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+
+        //document.getElementById("write").innerHTML = window.location.search;   
+        //var imgText = document.getElementById("imgtext");         
+
+        const YTPlayerOverlay = document.querySelector(".youtube-player-overlay");
+        const YTLinks = document.querySelectorAll(".youtube-link");
+        const YTPalyerPopup = document.querySelector(".youtube-player-popup iframe")
+
+        let links = "wyEOwHrpZH4";
+
+        YTLinks.forEach((link) => {
+            link.addEventListener("click", () => {
+                YTPlayerOverlay.classList.add("active");
+                let vidoLink = `https://www.youtube.com/embed/${link.dataset.link}`; //${link.dataset.link}
+                YTPalyerPopup.src = vidoLink;
+            });
+        });
+
+        YTPlayerOverlay.addEventListener("click", () => {
+            YTPlayerOverlay.classList.remove("active");
+        });
+
 
 
   </script>

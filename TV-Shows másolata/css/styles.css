@@ -277,23 +277,58 @@ cursor: pointer;
 
 
 .closebtn {
-  letter-spacing: 4px;
+  /*align-items: center;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  float: right;
+
+  font-size: 15px;
+  justify-content: center;
+  line-height: 1.25;
+  margin-top: 1.6rem;
+  margin-right: 0.2rem;
+  min-height: 3rem;
+  padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+  position: relative;
   text-decoration: none;
-  overflow : hidden;
-      font-weight: 400;
-    padding-left: 3.3em;
-    margin: 30px;
-      height: 40px;
-      width: 100%;
-      color: #ffffff;
-      font-size: 32px;
-      display: flex;
-      justify-content: space-between;
-      z-index: 2;
-      cursor: pointer;
-      text-transform: uppercase;
-      position: absolute;
-    
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  width: auto;
+  text-shadow: 2px 2px 4px #000000;*/
+  align-items: center;
+  background-clip: padding-box;
+  background-color:#e50914;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  justify-content: center;
+  line-height: 1px;
+  float: right;
+  margin-right: 8rem;
+  top: -45px;
+
+
+
+  min-height: 2.5rem;
+  padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+  position: relative;
+  text-decoration: none;
+  transition: all 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  width: auto;
   }
 
 .navocska{
@@ -304,7 +339,6 @@ cursor: pointer;
     padding-left: 3.3em;
     margin: 30px;
       height: 40px;
-      width: 100%;
       color: #ffffff;
       font-size: 32px;
       display: flex;
@@ -318,6 +352,7 @@ cursor: pointer;
 }
 
 .navocska2{
+  text-shadow: 2px 2px 4px #000000;
   left: 18em;
   align-items: center;
   color: #fff;
@@ -734,3 +769,92 @@ color: #ffffff;
   cursor: pointer;
   border-radius: 11px
 }*/
+
+
+
+
+
+
+
+
+
+
+.back {
+  height: 50px;
+  color: red;
+  margin-left: 5%;
+  padding: 8px;
+  border: 2px solid transparent;
+}
+
+.back:hover {
+  border-radius: 8px;
+  padding: 8px;
+  border: 2px solid red;
+  transition: all 400ms ease;
+}
+
+
+.youtube-link .icon {
+  width: 45px;
+  color: red;
+  display: flex;
+  flex-shrink: 0;
+}
+
+.youtube-link {
+  position: absolute;
+  font-size: 20px;
+  color: red;
+  line-height: 2;
+  display: flex;
+  gap: 10px;
+  margin-left: 10%;
+  padding: 4px 15px;
+  cursor: pointer;
+  transition: all 400ms ease;
+  border: 2px solid red;
+  border-radius: 8px;
+}
+
+.youtube-link:hover {
+  transition: all 400ms ease;
+  background: red;
+  color: white;
+  .icon{
+      color: white;
+  }
+  
+  
+}
+
+.youtube-player-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.youtube-player-overlay.active { 
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.youtube-player-popup {
+  position: fixed;
+  top: 5%;
+  width: 80%;
+  left: 50%;
+  transform: translate(-50%,-100%);
+  transition: all 400ms ease;
+}
+
+.youtube-player-overlay.active .youtube-player-popup{ 
+  transform: translate(-50%,0);
+}
+
+.youtube-player-popup iframe {
+  width: 100%;
+  aspect-ratio: 16/9;
+}
