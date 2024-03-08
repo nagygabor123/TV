@@ -144,10 +144,7 @@ box-sizing: border-box;
       display: none;
     }
 
-body {
-/*font-family: "Neue Montreal";*/
-background: rgb(0, 0, 0);
-}
+
 
 .kutya {
 margin: 0;
@@ -276,11 +273,11 @@ background-color: rgb(0, 0, 0);
 z-index: 2; 
 cursor: pointer; 
 }
-.closebtn {
+/*.closebtn {
   letter-spacing:0.7px;
-    background-color: rgb(0, 0, 0);
-    /*font-weight: 400;*/
-  padding: 0.7rem;
+
+  padding-left: 10.5em;
+  margin: 30px;
     height: 40px;
     color: #ffffff;
     font-size: 13px;
@@ -290,9 +287,53 @@ cursor: pointer;
     cursor: pointer;
     text-transform: uppercase;
     position: absolute;
-  }
+    float: right;
+  }*/
 
+.navocska{
+  letter-spacing: 4px;
+  text-decoration: none;
+  overflow : hidden;
+      font-weight: 400;
+    padding-left: 3.3em;
+    margin: 30px;
+      height: 40px;
+      width: 100%;
+      color: #ffffff;
+      font-size: 32px;
+      display: flex;
+      justify-content: space-between;
+      z-index: 2;
+      cursor: pointer;
+      text-transform: uppercase;
+      position: absolute;
+      font-family: "Staatliches", sans-serif;
+    
+}
 
+.navocska2{
+  left: 18em;
+  align-items: center;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+
+  font-size: 15px;
+  justify-content: center;
+  line-height: 1.25;
+  margin-top: 1.6rem;
+  margin-right: 0.2rem;
+  min-height: 3rem;
+  padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+  position: relative;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  width: auto;
+    
+}
 
 /*position: absolute;*/
 /*
@@ -321,14 +362,11 @@ top: 20px;
 }
 
 
-#navocska{
-  color: white;
-  position: absolute;
-}
+
 
 #imgtext {
   font-family: "Staatliches", sans-serif;
-  margin-left: 1.34em;
+  margin-left: 1.2em;
   margin-top: 1.3em;
   position: absolute;
 /*line-height: 150%;
@@ -336,7 +374,7 @@ position: absolute;
 top: 111px;
 right: 360px;*/
 color: rgb(255, 255, 255);
-font-size: 100px;
+font-size: 110px;
 }
 
 /*
