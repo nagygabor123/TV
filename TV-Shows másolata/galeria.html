@@ -24,7 +24,7 @@
     <br><br><h2>Popular on Netflix</h2>
     <div class="swiper-container">
       <div class="swiper-wrapper">
-        <div class="swiper-slide"><img onclick="myFunction(this);" src="img/1.jpg" alt="wyEOwHrpZH4"></div> <!--<a href="film1.html"> </a>-->
+        <div class="swiper-slide"><img onclick="myFunction(this);" src="img/1.jpg" alt="PeWnAFeqMUA_Elemental_Follows Ember and Wade, in a city where fire-, water-, earth- and air-residents live together."></div> <!--<a href="film1.html"> </a>-->
         <div class="swiper-slide"><a href="film1.html"><img src="img/2.jpg" alt="Movie Title"></a></div>
         <div class="swiper-slide"><a href="film1.html"><img src="img/3.jpg" alt="Movie Title"></a></div>
         <div class="swiper-slide"><a href="film1.html"><img src="img/4.jpg" alt="Movie Title"></a></div>
@@ -90,13 +90,29 @@
         <div>✖ BEZÁRÁS</div>
     </span>
   
+
     <img class="expandKep" id="expandedImg">
     <img class="expandAtmenet" src="img/atmenet.png" alt="">
     
+    
 
-	<div id="imgtext" onclick="myFunkcio()"></div>
+	<div id="imgtext"></div>
+  <!--<div id="imgaltText"></div>-->
 
-	<div id="btn"></div>
+  <div class="containerkee">
+    <div id="imgaltText">
+    </div>
+    <button type="submit" class="btn-primary margin-top-1">
+      Lejátszás
+      <i class="fas fa-chevron-right margin-left"></i>
+    </button>
+    <!--<button class="button" style="background-color: white; color: black;">Lejátszás</button>
+    <button class="button" style="margin: 40px 120px; background-color: grey; color: white;">Több infó</button>-->
+  </div>
+
+  
+
+	<!--<div id="btn"></div>-->
 
 
   <!-- Swiper JS -->
@@ -123,9 +139,18 @@
 	function myFunction(imgs) {
 	var expandImg = document.getElementById("expandedImg");
 	var imgText = document.getElementById("imgtext");
+  var imgaltText = document.getElementById("imgaltText");
 	var btn = document.getElementById("btn");
 	expandImg.src = imgs.src; //imgs.src
-	imgText.innerHTML = imgs.alt;
+	
+
+
+  let text = imgs.alt;
+  const myArray = text.split("_");
+  imgText.innerHTML = myArray[1];
+  imgaltText.innerHTML = myArray[2];
+  //document.getElementById("demo").innerHTML = myArray[1]; 
+
 	expandImg.parentElement.style.display = "block";
 	}
 

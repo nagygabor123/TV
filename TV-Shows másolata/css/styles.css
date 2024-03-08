@@ -1,11 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Staatliches&display=swap');
+
 html, body {
   position: relative;
   height: 100%;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
 }
 
 body {
   background: #000;
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  /*font-family: Helvetica Neue, Helvetica, Arial, sans-serif;*/
   font-size: 14px;
   color: #fff;
   margin: 0;
@@ -127,11 +133,6 @@ img {
 }
 
 
-
-@font-face {
-  font-family: "Neue Montreal";
-  src: url(./eroforrasok/betutipusok/PPNeueMontreal-Medium.otf) format("truetype");
-}
 
 * {
           margin: 0;
@@ -343,12 +344,14 @@ top: 20px;
 
 
 .expandAtmenet{
-  width: 60%; height: 60%;
+  top: -25px;
+  width: 60%; height: 75%;
   position: absolute;
 }
 
 .expandKep{
-  width: 100%; height: 60%;
+  top: -25px;
+  width: 100%; height: 75%;
   position: absolute;
   /*padding: 1em;*/
 
@@ -358,12 +361,55 @@ top: 20px;
 
 
 #imgtext {
-line-height: 150%;
+  font-family: "Staatliches", sans-serif;
+  padding: 1.7em;
+  position: absolute;
+/*line-height: 150%;
 position: absolute;
 top: 111px;
-right: 360px;
-color: rgb(0, 0, 0);
-font-size: 16px;
+right: 360px;*/
+color: rgb(255, 255, 255);
+font-size: 80px;
+}
+
+/*
+#imgaltText{
+  padding: 1.1em;
+  position: absolute;
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+}*/
+
+
+.containerkee {
+  top: 300px;
+  left: 136px;
+
+  position: absolute;
+  width: 25%;
+  height: 80%;
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+}
+
+.imgaltText {
+  
+  position: absolute;
+  border: 2px solid #333;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+:root {
+  --color-invalid: #e50914;
+  --color-invalid-hover: #f11722;
+  --color-valid: rgb(13, 150, 65);
+  --color-forgot: #0071eb;
+  --color-forgot-hover: #2786ec;
+  --color-input: #333333;
+  --color-bg-2: rgba(0, 0, 0, 0.4);
+  --header-box-shadow: inset 10rem 10rem 24rem rgba(0, 0, 0, 0.5),
+    inset -10rem -10rem 24rem rgba(0, 0, 0, 0.5);
 }
 
 #image {
@@ -371,7 +417,38 @@ font-size: 16px;
       }
 
 
-
+      button,
+      .btn {
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        cursor: pointer;
+        font-size: 4px;
+        padding: 1.1em;
+        border: none;
+        border-radius: 5px;
+        color: white;
+        height: 3.2rem;
+        max-width: 100%;
+      }
+      .btn-primary {
+        font-size: 0.8em;
+        background: var(--color-invalid);
+        margin-inline: auto;
+      }
+      .btn-signin {
+        height: 2.2rem;
+        padding: 0.8em;
+        background-color: var(--color-invalid);
+        font-size: 1em;
+      }
+      .btn-primary:hover,
+      .btn-signin:hover {
+        background-color: var(--color-invalid-hover);
+      }
 
 
 
@@ -382,7 +459,7 @@ font-size: 16px;
 -webkit-text-size-adjust: 100%;
 }
 */
-
+/*
 button {
 overflow: visible;
 }
@@ -395,7 +472,7 @@ button, input, select, textarea {
 color: #000;
 font: inherit;
 margin: 0;
-}
+}*/
 
 
 #vasarlasForm {
@@ -591,3 +668,18 @@ transition: all 0.3s;
 background: #000000;
 color: #ffffff;
 }
+
+/*
+
+.button {
+  position: absolute;
+  border: none;
+  padding: 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 40px 0px;
+  cursor: pointer;
+  border-radius: 11px
+}*/
