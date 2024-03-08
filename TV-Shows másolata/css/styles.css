@@ -273,22 +273,28 @@ background-color: rgb(0, 0, 0);
 z-index: 2; 
 cursor: pointer; 
 }
-/*.closebtn {
-  letter-spacing:0.7px;
 
-  padding-left: 10.5em;
-  margin: 30px;
-    height: 40px;
-    color: #ffffff;
-    font-size: 13px;
-    display: flex;
-    justify-content: space-between;
-    z-index: 2;
-    cursor: pointer;
-    text-transform: uppercase;
-    position: absolute;
-    float: right;
-  }*/
+
+
+.closebtn {
+  letter-spacing: 4px;
+  text-decoration: none;
+  overflow : hidden;
+      font-weight: 400;
+    padding-left: 3.3em;
+    margin: 30px;
+      height: 40px;
+      width: 100%;
+      color: #ffffff;
+      font-size: 32px;
+      display: flex;
+      justify-content: space-between;
+      z-index: 2;
+      cursor: pointer;
+      text-transform: uppercase;
+      position: absolute;
+    
+  }
 
 .navocska{
   letter-spacing: 4px;
