@@ -335,17 +335,26 @@ cursor: pointer;
   letter-spacing: 4px;
   text-decoration: none;
   overflow : hidden;
-      font-weight: 400;
-    padding-left: 3.3em;
-    margin: 30px;
-      height: 40px;
-      color: #ffffff;
-      font-size: 32px;
-      display: flex;
-      justify-content: space-between;
-      z-index: 2;
-      cursor: pointer;
-      text-transform: uppercase;
+
+
+
+
+
+  font-weight: 400;
+  padding-left: 3.3em;
+  margin: 30px;
+    height: 40px;
+    color: #ffffff;
+    font-size: 32px;
+    display: flex;
+    justify-content: space-between;
+ 
+    cursor: pointer;
+    text-transform: uppercase;
+
+
+
+
       position: absolute;
       font-family: "Staatliches", sans-serif;
     
@@ -777,7 +786,7 @@ color: #ffffff;
 
 
 
-
+/*
 
 .back {
   height: 50px;
@@ -857,4 +866,4 @@ color: #ffffff;
 .youtube-player-popup iframe {
   width: 100%;
   aspect-ratio: 16/9;
-}
+}*/

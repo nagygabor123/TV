@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
   <link rel="stylesheet" href="package/css/swiper.min.css">
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="./css/film.css">
 </head>
 <body>
 
@@ -122,17 +123,21 @@
     <div class="youtube-link" data-link="wyEOwHrpZH4"> <!--data-link="wyEOwHrpZH4"-->
         LEJÁTSZÁS
     </div>
+
+    <div class="youtube-player-overlay ">
+      <div class="youtube-player-popup">
+          <iframe src="https://www.youtube.com/embed/" 
+          title="A YouTube video" 
+          frameborder="0" 
+          allowfullscreen></iframe>
+      </div>
+  </div>
+
+
 </div>
 
 
-<div class="youtube-player-overlay ">
-    <div class="youtube-player-popup">
-        <iframe src="https://www.youtube.com/embed/" 
-        title="A YouTube video" 
-        frameborder="0" 
-        allowfullscreen></iframe>
-    </div>
-</div>
+
 
 
 	<!--<div id="btn"></div>-->
@@ -227,7 +232,7 @@
         //document.getElementById("write").innerHTML = window.location.search;   
         //var imgText = document.getElementById("imgtext");         
 
-        const YTPlayerOverlay = document.querySelector(".youtube-player-overlay");
+       /* const YTPlayerOverlay = document.querySelector(".youtube-player-overlay");
         const YTLinks = document.querySelectorAll(".youtube-link");
         const YTPalyerPopup = document.querySelector(".youtube-player-popup iframe")
 
@@ -243,10 +248,11 @@
 
         YTPlayerOverlay.addEventListener("click", () => {
             YTPlayerOverlay.classList.remove("active");
-        });
+        });*/
 
 
 
   </script>
+   <script src="./js/main.js"></script>
 </body>
 </html>
