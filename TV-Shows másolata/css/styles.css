@@ -9,8 +9,11 @@ html, body {
   font-weight: 400;
 }
 
+
+
+
 body {
-  background: #000;
+  background-image: linear-gradient(40deg, rgb(0, 0, 0) 50%, #e50914);
   /*font-family: Helvetica Neue, Helvetica, Arial, sans-serif;*/
   font-size: 14px;
   color: #fff;
@@ -51,9 +54,16 @@ body {
 .swiper-container {
   width: 100%;
   height: 100%;
+  
+}
+
+
+h2{
+  margin-left: 6.4em;
 }
 
 .swiper-slide {
+  
   text-align: center;
   font-size: 18px;
   /* Center slide text vertically */
@@ -74,32 +84,36 @@ img {
 }
 
 
-
 :root {
   --swiper-theme-color: #fff;
 }
 
 .netflix-slider .swiper-wrapper {
-  padding: 20px 0;
+  padding: 20px 0px;
 }
 
 .netflix-slider .swiper-slide {
+  
   -webkit-transition: 250ms all;
   transition: 250ms all;
+  
 }
 
 .netflix-slider .swiper-slide:hover {
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
   z-index: 1;
+ 
 }
 
 .netflix-slider .swiper-slide:first-child:hover {
   margin: 0 40px;
+  
 }
 
 .netflix-slider .swiper-slide:last-child:hover {
   margin: 0 -40px;
+  
 }
 /*# sourceMappingURL=styles.css.map */
 
