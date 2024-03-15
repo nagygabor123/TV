@@ -68,8 +68,10 @@ video {
   max-width: 100%;
 }
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  /*font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;*/
+    font-family: "Roboto", sans-serif;
+    /*font-weight: 400;*/
   background-color: black;
   color: white;
 }
@@ -309,7 +311,7 @@ label {
 /* Features ------------------------------------------ */
 
 .features {
-  background-image: linear-gradient(40deg, rgb(0, 0, 0) 50%, #e50914);
+  
   position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -387,6 +389,8 @@ label {
   display: none;
 }
 .faq-label {
+  border-radius: 8px;
+
   cursor: pointer;
   display: flex;
   justify-content: space-between;
@@ -397,6 +401,8 @@ label {
   border-bottom: 4px solid black;
 }
 .faq-content {
+  border-radius: 8px;
+
   background-color: var(--color-input);
   max-height: 0;
   overflow: hidden;
@@ -418,77 +424,6 @@ label {
   margin: 0 auto;
 }
 
-/* Footer -------------------------------------------- */
-
-.footer {
-  padding: 3rem;
-}
-.footer-container {
-  display: grid;
-  max-width: 50rem;
-  gap: 1.6rem;
-  color: gray;
-}
-.footer-black {
-  background-color: black;
-}
-.links {
-  display: flex;
-  line-height: 1.7;
-  justify-content: space-between;
-  gap: 2rem;
-}
-
-/* Language Option ----------------------------------- */
-
-.language {
-  position: relative;
-}
-.language-select {
-  appearance: none;
-  cursor: pointer;
-  height: 2.4rem;
-  max-width: 12rem;
-  border-radius: 0.2rem;
-  padding-inline: 2.4rem;
-  outline: none;
-  color: gray;
-  background-color: transparent;
-}
-.language-icon {
-  position: absolute;
-  height: 100%;
-  top: 0;
-  font-size: 0.9rem;
-  display: flex;
-  align-items: center;
-}
-.globe {
-  position: absolute;
-  left: 1rem;
-}
-.chevron {
-  position: absolute;
-  left: 10rem;
-}
-
-.top {
-  height: 2.2rem;
-  padding-inline: 0.6rem;
-  width: 3.6rem;
-  color: white;
-  font-weight: 600;
-  border: 1.8px solid white;
-}
-.top-icon {
-  color: white;
-}
-.chevron-top {
-  position: absolute;
-  left: 2.4rem;
-  font-size: 0.6rem;
-  font-weight: 600;
-}
 
 /* Media Query --------------------------------------- */
 
@@ -563,34 +498,6 @@ label {
   }
 }
 
-/* Footer Media Query */
-
-@media (320px <= width <= 640px) {
-  .footer {
-    padding-inline: 2rem;
-    border-top: 2px solid gray;
-  }
-  .links {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
-}
-@media (320px <= width <= 450px) {
-  .links {
-    display: block;
-    line-height: 2;
-  }
-}
-
-@media (min-width: 2048px) {
-  .header-container,
-  .nav, section, footer {
-    zoom: 2;
-  }
-
-}
-
-
 
 .navocska{
   letter-spacing: 4px;
@@ -646,6 +553,81 @@ label {
     
 }
 
+
+/* Footer -------------------------------------------- */
+
+.footer {
+  padding: 3rem;
+}
+.footer-container {
+  display: grid;
+  max-width: 50rem;
+  gap: 1.6rem;
+  color: gray;
+}
+.footer-black {
+  background-color: black;
+}
+.links {
+  display: flex;
+  line-height: 1.7;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+/* Language Option ----------------------------------- */
+
+.language {
+  position: relative;
+}
+.language-select {
+  appearance: none;
+  cursor: pointer;
+  height: 2.4rem;
+  max-width: 12rem;
+  border-radius: 0.2rem;
+  padding-inline: 2.4rem;
+  outline: none;
+  color: gray;
+  background-color: transparent;
+}
+.language-icon {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+}
+.globe {
+  position: absolute;
+  left: 1rem;
+}
+.chevron {
+  position: absolute;
+  left: 10rem;
+}
+
+.top {
+  height: 2.2rem;
+  padding-inline: 0.6rem;
+  width: 3.6rem;
+  color: white;
+  font-weight: 600;
+  border: 1.8px solid white;
+}
+.top-icon {
+  color: white;
+}
+.chevron-top {
+  position: absolute;
+  left: 2.4rem;
+  font-size: 0.6rem;
+  font-weight: 600;
+}
+
+
+
   </style>
 
 </head>
@@ -699,29 +681,28 @@ label {
   </div>
   </header>
 
-  <section class="text-white border-gray">
+  <section class="text-white">
     <div class="features margin-inline">
       <div class="text-area">
-        <p class="text-lg">Enjoy on your TV.</p>
-        <p class="text-md-1">Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV, Blu-ray players, and more.</p>
+        <p class="text-lg">Élvezd TV-n.</p>
+        <p class="text-md-1">Nézd a MAFILM-et, nem számít milyen típusú TV, mi mindenhol ott vagyunk.</p>
       </div>
       <div class="img-area">
         <img src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/tv.png" alt="" />
-        <video class="video-1" autoplay playsinline loop>
-          <source src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-tv-0819.m4v" type="video/mp4" />
+        <video class="video-1" autoplay playsinline loop muted>
+          <source src="img/trailer.mp4" type="video/mp4" />
         </video>
       </div>
     </div>
   </section>
 
-  <section class="text-white border-gray">
+  <section class="text-white">
     <div class="features margin-inline">
       <div class="text-area grid-reversed">
-        <p class="text-lg">Download your shows to watch offline.</p>
-        <p class="text-md-1">Save your favorites easily and always have something to watch.</p>
+        <p class="text-lg">Töltsd le, és nézd offline állapotban</p>
+        <p class="text-md-1">Könnyítsd meg magadnak a szórakozást és élvezd kedvenc filmjeidet.</p>
       </div>
       <div class="img-area">
-        <img src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/mobile-0819.jpg" alt="" />
         <div class="download">
           <img src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/boxshot.png" alt="" />
           <div class="download-text">
@@ -734,114 +715,68 @@ label {
     </div>
   </section>
 
-  <section class="text-white border-gray">
+  <section class="text-white">
     <div class="features margin-inline">
       <div class="text-area">
-        <p class="text-lg">Watch everywhere.</p>
-        <p class="text-md-1">Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV.</p>
+        <p class="text-lg">Nézd bárhol</p>
+        <p class="text-md-1">Nézd laptopon, tableten, telefon és TV-n.</p>
       </div>
       <div class="img-area">
         <img class="devices" src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/device-pile-id.png" alt="" />
-        <video class="video-2" autoplay playsinline loop>
-          <source src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-devices-id.m4v" type="video/mp4" />
+        <video class="video-2" autoplay playsinline loop muted>
+          <source src="img/trailer2.mp4" type="video/mp4" />
         </video>
       </div>
     </div>
   </section>
 
-  <section class="text-white border-gray">
-    <div class="features margin-inline">
-      <div class="text-area grid-reversed">
-        <p class="text-lg">Create profiles for kids.</p>
-        <p class="text-md-1">Send kids on adventures with their favorite characters in a space made just for them—free with your membership.</p>
-      </div>
-      <div class="img-area">
-        <img src="https://occ-0-6707-64.1.nflxso.net/dnm/api/v6/19OhWN2dO19C9txTON9tvTFtefw/AAAABfpnX3dbgjZ-Je8Ax3xn0kXehZm_5L6-xe6YSTq_ucht9TI5jwDMqusWZKNYT8DfGudD0_wWVVTFLiN2_kaQJumz2iivUWbIbAtF.png?r=11f" alt="" />
-      </div>
-    </div>
-  </section>
-
-  <section class="faq text-white border-gray">
-    <p class="text-lg text-center">Frequently Asked Question</p>
+  <section class="faq text-white">
+    <p class="text-lg text-center">Gyakran Ismételt Kérdések</p>
     <ul class="faq-accordion margin-inline text-md">
       <li>
         <input class="faq-input" type="radio" name="faq" id="faq-1" />
-        <label class="faq-label" for="faq-1">What is Netflix?<i class="fa fa-add"></i> </label>
+        <label class="faq-label" for="faq-1">Donec vitae leo aliquam?<i class="fa fa-add"></i> </label>
         <div class="faq-content">
           <p>
-            Netflix is a streaming service that offers a wide variety of award-winning TV shows, movies, anime, documentaries, and more on thousands of internet-connected devices. <br />
+            Donec vitae leo aliquam, vulputate lorem in, porta eros. Proin facilisis lorem vitae libero tincidunt imperdiet. Praesent vitae dolor id mauris varius lacinia at at nunc. Quisque in dapibus ligula.  <br />
             <br />
-            You can watch as much as you want, whenever you want without a single commercial – all for one low monthly price. There's always something new to discover and new TV shows and movies are added every week!
+            Quisque sit amet tempor lacus, eget iaculis nisl. Sed sit amet quam pretium, eleifend turpis ac, tempus dui. Nam sodales nec lorem et malesuada
           </p>
         </div>
       </li>
 
       <li>
         <input class="faq-input" type="radio" name="faq" id="faq-2" />
-        <label class="faq-label" for="faq-2">How much does Netflix cost?<i class="fa fa-add"></i></label>
+        <label class="faq-label" for="faq-2">Nunc vulputate eros justo?<i class="fa fa-add"></i></label>
         <div class="faq-content">
-          <p>Watch Netflix on your smartphone, tablet, Smart TV, laptop, or streaming device, all for one fixed monthly fee. Plans range from IDR54,000 to IDR186,000 a month. No extra costs, no contracts.</p>
+          <p>Nunc vulputate eros justo, posuere pulvinar justo tristique non. Fusce odio lorem, facilisis quis consequat quis, mattis et erat.</p>
         </div>
       </li>
 
       <li>
         <input class="faq-input" type="radio" name="faq" id="faq-3" />
-        <label class="faq-label" for="faq-3">Where can I watch?<i class="fa fa-add"></i></label>
+        <label class="faq-label" for="faq-3">Interdum et malesuada fames?<i class="fa fa-add"></i></label>
         <div class="faq-content">
           <p>
-            Watch anywhere, anytime. Sign in with your Netflix account to watch instantly on the web at netflix.com from your personal computer or on any internet-connected device that offers the Netflix app, including smart TVs,
-            smartphones, tablets, streaming media players and game consoles. <br />
+            Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis scelerisque eros ac luctus suscipit. Vestibulum ac lorem velit. Fusce id vestibulum sapien. ulla faucibus neque convallis dui ultricies, pellentesque mollis lorem posuere. Phasellus vel elit pulvinar, porttitor dui vel, consequat risus. <br />
             <br />
-            You can also download your favorite shows with the iOS, Android, or Windows 10 app. Use downloads to watch while you're on the go and without an internet connection. Take Netflix with you anywhere.
+            Curabitur nec venenatis ipsum, nec lacinia nibh. Phasellus feugiat lacus neque. Curabitur tempus nisi sit amet lacinia lobortis. 
           </p>
         </div>
       </li>
 
       <li>
         <input class="faq-input" type="radio" name="faq" id="faq-4" />
-        <label class="faq-label" for="faq-4">How do I cancel?<i class="fa fa-add"></i></label>
+        <label class="faq-label" for="faq-4">Ut malesuada?<i class="fa fa-add"></i></label>
         <div class="faq-content">
-          <p>Netflix is flexible. There are no pesky contracts and no commitments. You can easily cancel your account online in two clicks. There are no cancellation fees – start or stop your account anytime.</p>
+          <p>Ut malesuada, augue cursus sollicitudin faucibus, risus dui tempor sapien, quis porttitor ipsum dolor ut ipsum. Duis at turpis ante. Suspendisse ligula tellus, convallis at felis at, volutpat tempus enim.</p>
         </div>
       </li>
 
-      <li>
-        <input class="faq-input" type="radio" name="faq" id="faq-5" />
-        <label class="faq-label" for="faq-5">What can I watch on Netflix?<i class="fa fa-add"></i></label>
-        <div class="faq-content">
-          <p>Netflix has an extensive library of feature films, documentaries, TV shows, anime, award-winning Netflix originals, and more. Watch as much as you want, anytime you want.</p>
-        </div>
-      </li>
 
-      <li>
-        <input class="faq-input" type="radio" name="faq" id="faq-6" />
-        <label class="faq-label" for="faq-6">Is Netflix good for kids?<i class="fa fa-add"></i></label>
-        <div class="faq-content">
-          <p>
-            The Netflix Kids experience is included in your membership to give parents control while kids enjoy family-friendly TV shows and movies in their own space. <br />
-            <br />
-            Kids profiles come with PIN-protected parental controls that let you restrict the maturity rating of content kids can watch and block specific titles you don’t want kids to see.
-          </p>
-        </div>
-      </li>
     </ul>
-
-    <div class="membership">
-      <p class="text-md text-center margin-bottom-1 margin-top">Ready to watch? Enter your email to create or restart your membership.</p>
-      <form action="" class="input">
-        <input class="input-field" type="email" id="email" placeholder="email" pattern="[A-Za-z0-9._-]+@[A-Za-z]+\.[a-z]{2,}$" autocomplete="off" required />
-
-        <label for="email" class="input-label label-size">Email address</label>
-
-        <p class="text-error">Please enter a valid email or phone number.</p>
-
-        <button type="submit" class="btn-primary margin-top-1">
-          Get Started
-          <i class="fas fa-chevron-right margin-left"></i>
-        </button>
-      </form>
-    </div>
   </section>
+
 
   <footer class="footer footer-black">
     <div class="footer-container margin-inline">
@@ -865,18 +800,11 @@ label {
         <a class="text-terms text-underline" href="">Privacy</a>
       </div>
 
-      <div class="language">
-        <select class="language-select" onchange="location=this.value;">
-          <option value="" selected>English</option>
-          <option value="">Bahasa Indonesia</option>
-        </select>
-        <div class="language-icon">
-          <i class="fas fa-globe globe"></i>
-          <i class="fas fa-chevron-down chevron"></i>
-        </div>
-      </div>
     </div>
   </footer>
+
+
+
 </body>
 
 </html>
