@@ -187,6 +187,9 @@ margin: 0;
 position: relative;
 overflow: hidden;
 }
+
+
+
 /*
 nav {
 letter-spacing:0.7px;
@@ -859,6 +862,7 @@ color: #ffffff;
 }*/
 
 
+
 .back {
   height: 50px;
   color: red;
@@ -877,7 +881,6 @@ color: #ffffff;
 .margin-inline {
   margin-inline: auto;
 }
-
 
 
 .youtube-player-overlay {
