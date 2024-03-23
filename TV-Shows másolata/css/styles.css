@@ -23,6 +23,33 @@ body {
 }
 
 
+.containerss img {
+  width: 70%;
+  height: 70%;
+  object-fit: cover;
+}
+.containerss {
+margin-top: 40px;
+  position: absolute;
+  top: 30em;
+  left: 0;
+  width: 500px;
+  height: 100vw;
+  transform: rotate(-90deg) translateY(-500px);
+  transform-origin: top right;
+  overflow-x: hidden;
+  overflow-y: auto;
+  counter-reset: offset;
+}
+
+.containerss div {
+  counter-increment: offset;
+  position: relative;
+  width: 100%;
+  height: 400px;
+  transform: rotate(90deg);
+  margin: 19px 0;
+}
 
 
 .container {
