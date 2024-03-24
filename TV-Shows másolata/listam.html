@@ -1,211 +1,576 @@
 <!DOCTYPE html>
-<html>
+<html lang="hu" >
 <head>
-	<title>Movie List</title>
-	<link rel="stylesheet" type="text/css" href="CSS/style.css">
-	<meta name="viewport" content="width=device-width">
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edvin & Szalkai</title>
+	<link rel="icon" type="image/x-icon" href="eroforrasok/ikonok/camera_FILL0_wght400_GRAD0_opsz24.svg">
+	<style>
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
 
-	<link href="https://fonts.googleapis.com/css?family=Fresca" rel="stylesheet">
-    <style>
-        * {
-	padding:0;
-	margin:0;
-	box-sizing:border-box;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Staatliches&display=swap');
+
+
+	* {
+		        margin: 0;
+        padding: 0;
+	box-sizing: border-box;
 }
+
+::-webkit-scrollbar {
+        display: none;
+      }
 
 body {
-	background:white;
-	font-family:"Fresca";
+	font-family: "Roboto", sans-serif;
+  font-weight: 400;
+	background: rgb(0, 0, 0);
 }
 
-#wrapper {
-	margin:20px auto;
-	background:#d5e1df;
-	max-width:960px;
-	border-radius:6px;
-	box-shadow: 0px 1px 6px rgba(0,0,0,0.2);
-	padding: 20px 0;
+.kutya {
+	margin: 0;
+	padding: 1rem;
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
-header {
-	padding-top:20px;
-	text-align:center;
+.kutya img {
+	margin-top: 25px;
+	width: 100%;
+	height: 450px;
+	display: block;
+	/*aspect-ratio: 1 / 1;*/
+	object-fit: cover;
+	transition: transform 1000ms;
 }
 
-header p {
-	font-size:19px;
-	margin-top:5px;
+
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: grid;
+	gap: 1.2rem;
+	grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+	max-width: 100%;
+
+	width: 117rem;
 }
 
-header #search-movie {
-	margin:20px auto;
-	margin-top:30px;
-	width:300px;
-	display:block;
-	padding:8px;
+figure {
+	margin: 0;
+	position: relative;
+	overflow: hidden;
 }
 
-#movie-list {
-	margin-top:60px;
-	padding:25px 0;
-	background:#e6e2d3;
+
+
+	.footer {
+		bottom: 0;
+	letter-spacing:0.7px;
+        background-color: white;
+        position: fixed;
+        /*font-weight: 400;*/
+        width: 100%;
+		height: 40px;
+		padding: 0.7rem;
+        color: #000000;
+        font-size: 13px;
+        display: flex;
+        justify-content: space-between;
+        z-index: 2;
+        cursor: pointer;
+    }
+
+	a {
+		text-decoration-line: none;
+	}
+
+	figcaption {
+		margin-top: 15px;
+		font-size: 13px;
+		/*height: 37px;*/
+	}
+
+.container {
+    position: fixed; 
+  display: none; 
+  width: 100%; 
+  height: 100%; 
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(255, 255, 255); 
+  z-index: 2; 
+  cursor: pointer; 
 }
 
-#movie-list li {
-	margin:0 auto;
-	display:flex;
-	flex-direction:row;
-	justify-content:space-around;
-	align-items:center;
-	width:90%;
-	padding:10px;
-	padding-left:20px;
-	border-left:solid 5px #b5e7a0;
-	margin-top:15px;
-	
+#vasarlas {
+    position: fixed; 
+  display: none; 
+  width: 100%; 
+  height: 100%; 
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(255, 255, 255); 
+  z-index: 2; 
+  cursor: pointer; 
 }
 
-#movie-list li:hover {
-	border-color:#86af49;
+#vasarlas2 {
+    position: fixed; 
+  display: none; 
+  width: 100%; 
+  height: 100%; 
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(255, 255, 255); 
+  z-index: 2; 
+  cursor: pointer; 
+}
+.closebtn {
+letter-spacing:0.7px;
+    background-color: white;
+    /*font-weight: 400;*/
+	padding: 0.7rem;
+    height: 40px;
+    color: #000000;
+    font-size: 13px;
+    display: flex;
+    justify-content: space-between;
+    z-index: 2;
+    cursor: pointer;
+    text-transform: uppercase;
 }
 
-.title {
-	display:block;
-	width:90%;
-	font-size:18px;
+
+
+#expandedImg{
+    position: absolute;
+    width: 900px;
+  height: 700px;
+  left: 200px;
+  top: 90px;
 }
 
-.delete {
-	display:block;
-	width:10%;
-	padding:6px;
-	text-align:center;
-	cursor:pointer;
-	background:#86af49;
-	border-radius:6px;
-	color:white;
+
+
+#imgtext {
+	line-height: 150%;
+  position: absolute;
+  top: 111px;
+  right: 360px;
+  color: rgb(0, 0, 0);
+  font-size: 16px;
 }
 
-#add-movie {
-	margin:0 auto;
-	max-width:500px;
-	text-align:center;
+#image {
+            display: none;
+        }
+
+
+
+
+
+
+/*
+		html {
+    font-family: "Neue Montreal";
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+*/
+
+button {
+  overflow: visible;
 }
 
-#add-movie .checkbox-div {
-	margin:30px;
+button, select {
+  text-transform: none;
 }
 
-#add-movie #add-movie-input {
-	margin:20px auto;
-	width:300px;
-	padding:8px;
+button, input, select, textarea {
+  color: #000;
+  font: inherit;
+  margin: 0;
 }
 
-#add-movie button {
-	width:100px;
-	font-size:16px;
-	padding:6px;
-	text-align:center;
-	cursor:pointer;
-	background:#86af49;
-	border-radius:6px;
-	color:white;
+
+#vasarlasForm {
+  position: relative;
+  /*padding: 0.4rem;
+  max-width: 940px;*/
+  top: 200px;
+  font-size: 12px;
+  max-width: 600px;
+  margin: auto;
 }
-    </style>
+
+
+::-webkit-scrollbar {
+        display: none;
+      }
+
+
+
+/*
+.icon_wrapper {
+  margin: 50px auto 0;
+  width: 100%;
+}
+
+.icon {
+  display: block;
+  fill: #474544;
+  height: 50px;
+  margin: 0 auto;
+  width: 50px;
+}*/
+
+.email {
+	float: right;
+	width: 45%;
+}
+
+input[type='text'], [type='email'], select, textarea {
+	background: none;
+  border: none;
+	border-bottom: solid 1px #000000;
+	color: #000000;
+	font-size: 1.000em;
+  font-weight: 400;
+  letter-spacing: 1px;
+	margin: 0em 0 1.875em 0;
+	padding: 0 0 0.795em 0;
+  /*text-transform: uppercase;*/
+	width: 100%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	-ms-transition: all 0.3s;
+	-o-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+input[type='text']:focus, [type='email']:focus, textarea:focus {
+	outline: none;
+	padding: 0 0 0.875em 0;
+}
+
+.message {
+	float: none;
+}
+
+.name {
+	float: left;
+	width: 45%;
+}
+
+select {
+  background: url('https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-down-20.png') no-repeat right;
+  outline: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+.subject {
+  width: 100%;
+}
+
+.telephone {
+  width: 100%;
+}
+
+textarea {
+	line-height: 150%;
+	height: 90px;
+	resize: none;
+  width: 100%;
+}
+
+::-webkit-input-placeholder {
+	color: #000000;
+}
+
+:-moz-placeholder { 
+	color: #000000;
+	opacity: 1;
+}
+
+::-moz-placeholder {
+	color: #000000;
+	opacity: 1;
+}
+
+:-ms-input-placeholder {
+	color: #000000;
+}
+
+#form_button {
+margin-top: 8px;
+  background: none;
+  border: solid 1px #000000;
+  color: #000000;
+  cursor: pointer;
+  display: inline-block;
+  font-family: 'Helvetica', Arial, sans-serif;
+  font-size: 0.875em;
+  font-weight: bold;
+  outline: none;
+  padding: 10px 25px;
+ /* text-transform: uppercase;*/
+  -webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	-ms-transition: all 0.3s;
+	-o-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+#form_button:hover {
+  background: #000000;
+  color: #ffffff;
+}
+
+
+
+#form_button2 {
+  background: none;
+  border: solid 1px #000000;
+  color: #000000;
+  cursor: pointer;
+  display: inline-block;
+  font-family: 'Helvetica', Arial, sans-serif;
+  font-size: 0.875em;
+  font-weight: bold;
+  outline: none;
+  padding: 10px 25px;
+ /* text-transform: uppercase;*/
+  -webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	-ms-transition: all 0.3s;
+	-o-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+#form_button2:hover {
+  background: #000000;
+  color: #ffffff;
+}
+
+
+#form_button3 {
+  background: none;
+  border: solid 1px #000000;
+  color: #000000;
+  cursor: pointer;
+  display: inline-block;
+  font-family: 'Helvetica', Arial, sans-serif;
+  font-size: 0.875em;
+  font-weight: bold;
+  outline: none;
+  padding: 10px 25px;
+ /* text-transform: uppercase;*/
+  -webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	-ms-transition: all 0.3s;
+	-o-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+#form_button3:hover {
+  background: #000000;
+  color: #ffffff;
+}
+
+
+
+
+
+
+.navocska{
+  letter-spacing: 4px;
+  text-decoration: none;
+  overflow : hidden;
+
+
+
+
+
+  font-weight: 400;
+  padding-left: 3.3em;
+  margin: 30px;
+    height: 40px;
+    color: #ffffff;
+    font-size: 32px;
+    display: flex;
+    justify-content: space-between;
+ 
+    cursor: pointer;
+    text-transform: uppercase;
+
+
+
+
+      position: absolute;
+      font-family: "Staatliches", sans-serif;
+    
+}
+
+
+
+.navocska2{
+  text-shadow: 2px 2px 4px #000000;
+  left: 18em;
+  align-items: center;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+
+  font-size: 15px;
+  justify-content: center;
+  line-height: 1.25;
+  margin-top: 1.6rem;
+  margin-right: 0.2rem;
+  min-height: 3rem;
+  padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+  position: relative;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  width: auto;
+    
+}
+
+
+</style>
 </head>
 <body>
 
-	<div id="result"></div>
 
-	<div id="wrapper">
-		<header>
-			<h1>Movie Watchlist</h1>
-			<p>Movies to watch</p>
-			<form>
-				<input type="text" id="search-movie" placeholder="Search movies...">
-			</form>
-		</header>
-		<ul id="movie-list">
+	<div>
+		<a class="navocska" style="color: #e50914;" href="fooldal.html">MAFILM</a> <a class="navocska2"href="fooldal.html">Főoldal</a> <a class="navocska2"href="filmek.html">Filmek</a> <a class="navocska2"href="listam.html">Listám</a>
+	  </div>
 
-		</ul>
-		<form id="add-movie">
-			<div class="checkbox-div">
-				<input type="checkbox" id ="hide">
-				<label for="hide">Hide all movies</label>
-			</div>
-			<input type="text" placeholder="Add a movie" id="add-movie-input">
-			<button>Add</button>
-		</form>
-	</div>
+<div class="kutya">
+<ul>
+	<li>
+			<figure>
+				<img id="n1" src="img/2.jpg" alt=""> 
+			</figure>
+	
+	</li>
+	<li>
+		<figure>
+			<img src="img/2.jpg" alt=""> 
+		</figure>
+
+	</li>
+	<li>
+		<figure>
+			<img src="img/2.jpg" alt=""> 
+		</figure>
+	
+	</li>
+	<li>
+		<figure>
+			<img src="img/2.jpg" alt=""> 
+		</figure>
+	
+	</li>
+	<li>
+		<figure>
+			<img src="img/2.jpg" alt=""> 
+		</figure>
+	</li>
+	<li>
+		<figure>
+			<img src="img/2.jpg" alt=""> 
+		</figure>
+	</li>
+	<li>
+		<figure>
+			<img src="img/2.jpg" alt=""> 
+		</figure>
+	</li>
+	<li>
+		<figure>
+			<img src="img/2.jpg" alt=""> 
+		</figure>
+	</li>
+	<li>
+		<figure>
+			<img src="img/2.jpg" alt=""> 
+		</figure>
+	</li>
+	<li>
+		<figure>
+			<img src="img/2.jpg" alt=""> 
+		</figure>
+	</li>
+	<li>
+		<figure>
+			<img src="img/2.jpg" alt=""> 
+		</figure>
+	</li>
+	<li>
+		<figure>
+			<img src="img/2.jpg" alt=""> 
+		</figure>
+	</li>
+	<li>
+		<figure>
+			<img src="img/2.jpg" alt=""> 
+		</figure>
+	</li>
+	<li>
+		<figure>
+			<img src="img/2.jpg" alt=""> 
+		</figure>
+	</li>	
+	<li>
+		<figure>
+			<img src="img/2.jpg" alt=""> 
+		</figure>
+</li>
+<li>
+	<figure>
+		<img src="img/2.jpg" alt=""> 
+	</figure>
+
+</li>
+</ul>
+</div>
+
+
+
+
+
+	
 	<script>
+	
+const myArray2 = localStorage.clickcount.split("*");
+//document.getElementById("n1").innerHTML = myArray2[1];
 
+var n1 = document.getElementById("n1");
+n1.src = myArray2[1];
 
-document.getElementById("result").innerHTML = localStorage.clickcount;
-
-
-
-
-let movieList = document.querySelector("#movie-list");
-
-//delete movies
-movieList.addEventListener('click', function(e) {
-	if (e.target.className == "delete") {
-		//movieList.removeChild(e.target.parentElement);
-		e.target.parentElement.style.display = "none";
-	}
-});
-
-
-//add movies
-let addMovie = document.forms[1];
-
-addMovie.addEventListener('submit', function(e) {
-	e.preventDefault();
-	let value = addMovie.querySelector("input[type = 'text']").value;
-
-	let li = document.createElement("li");
-	let movieTitle = document.createElement("span");
-	let delBtn = document.createElement("span");
-
-	movieTitle.textContent = value;
-	delBtn.textContent = "delete";
-
-	movieTitle.classList.add("title");
-	delBtn.classList.add("delete");
-
-	li.appendChild(movieTitle);
-	li.appendChild(delBtn);
-	movieList.appendChild(li);
-
-	addMovie.querySelector("input[type='text']").value = "";
-});
-
-//hide movies
-let hideBox = document.querySelector("#hide");
-hideBox.addEventListener('change', function(e) {
-	if (hideBox.checked) {
-		movieList.style.display = "none";
-	} else {
-		movieList.style.display = "block";
-	}
-});
-
-
-//filter movies
-let searchBar = document.forms[0];
-searchBar.addEventListener('keyup', function(e) {
-	let term = searchBar.querySelector("input").value.toLowerCase();
-	let movies = document.querySelectorAll(".title");
-	movies.forEach(movie => {
-		if (movie.textContent.toLowerCase().indexOf(term) != -1) {
-			movie.parentElement.style.display = "flex";
-		} else  {
-			movie.parentElement.style.display = "none";
-		}
-	});
-
-});
-    </script>
-</body>
+	</script>
+	</body>
 </html>

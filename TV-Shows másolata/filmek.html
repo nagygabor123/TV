@@ -245,7 +245,7 @@
     </div>
     <button class="button-5 youtube-link" style="background-color: white; color: black;">Lejátszás</button>
     <button class="button-5" style="background-color: grey; color: white;">Több infó</button>
-    <button class="button-51" onclick="hozzadas(this);" style="background-color: green; color: white;">+</button>
+    <button class="button-51" onclick="clickCounter()" style="background-color: green; color: white;">+</button>
   </div>
 
 
@@ -359,6 +359,9 @@
   <script>
 
 
+
+
+
     var swiper = new Swiper('.swiper-container', {
       slidesPerView: 6,
       spaceBetween: 10,
@@ -378,7 +381,7 @@
 
 
 
-  let filmNev = "";
+  let filmFoto = "";
 
 	function myFunction(imgs) {
 	var expandImg = document.getElementById("expandedImg");
@@ -421,13 +424,24 @@
   tempArray = myArray[0];
 
 
-  filmNev = myArray[1];
+  filmFoto = expandImg.src;
   //document.getElementById("demo").innerHTML = myArray[1]; 
 
 	expandImg.parentElement.style.display = "block";   ///block !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 	}
 
-
+  function clickCounter() {
+  if (typeof(Storage) !== "undefined") {
+    //if (localStorage.clickcount) {
+      localStorage.clickcount = localStorage.clickcount += "*" + filmFoto;
+    /*} else {
+      localStorage.clickcount += "ELSO";
+    }*/
+    //document.getElementById("result").innerHTML = localStorage.clickcount;
+  } /*else {
+    document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
+  }*/
+}
 
 	function myFunkcio() {
 	  var x = document.getElementById("vasarlas");
