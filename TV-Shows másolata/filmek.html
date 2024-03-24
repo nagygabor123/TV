@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>MAFILM - Filmek</title>
+	<link rel="icon" type="image/x-icon" href="/img/icon.png">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
   <link rel="stylesheet" href="package/css/swiper.min.css">
   <link rel="stylesheet" href="css/styles.css">
@@ -19,7 +20,7 @@
 
 
   <div>
-    <a class="navocska" style="color: #e50914;" href="fooldal.html">MAFILM</a> <a class="navocska2"href="fooldal.html">Főoldal</a> <a class="navocska2"href="filmek.html">Filmek</a> <a class="navocska2"href="listam.html">Listám</a>
+    <a class="navocska" style="color: #e50914;" href="fooldal.html">MAFILM</a> <a class="navocska2"href="fooldal.html">Főoldal</a> <a class="navocska2"href="filmek.html">Filmek</a> <a class="navocska2"href="listam.html">Saját lista</a>
   </div>
 
   
@@ -238,7 +239,7 @@
  
 
 	<div id="imgtext"></div>
-  <!--<div id="imgaltText"></div>-->
+ 
 
   <div class="containerkee">
     <div id="imgaltText">
@@ -250,7 +251,7 @@
 
 
     <div>
-      <a class="navocska" style="color: #e50914;" href="fooldal.html">MAFILM</a> <a class="navocska2"href="fooldal.html">Főoldal</a> <a class="navocska2"href="filmek.html">Filmek</a> <a class="navocska2"href="listam.html">Listám</a>
+      <a class="navocska" style="color: #e50914;" href="fooldal.html">MAFILM</a> <a class="navocska2"href="fooldal.html">Főoldal</a> <a class="navocska2"href="filmek.html">Filmek</a> <a class="navocska2"href="listam.html">Saját lista</a>
     </div>
     <span onclick="this.parentElement.style.display='none'" class="closebtn">
       <div>Vissza </div> <!--➔-->
@@ -385,7 +386,7 @@
 
 	function myFunction(imgs) {
 	var expandImg = document.getElementById("expandedImg");
-	//var imgText = document.getElementById("imgtext");
+	var imgText = document.getElementById("imgtext");
   var imgaltText = document.getElementById("imgaltText");
 	var btn = document.getElementById("btn");
 	expandImg.src = imgs.src; //imgs.src
@@ -418,7 +419,7 @@
 
 
 
-  //imgText.innerHTML = myArray[1];
+  imgText.innerHTML = myArray[1];
   imgaltText.innerHTML = myArray[2];
 
   tempArray = myArray[0];

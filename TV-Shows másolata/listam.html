@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edvin & Szalkai</title>
+	<link rel="icon" type="image/x-icon" href="/img/icon.png">
 	<link rel="icon" type="image/x-icon" href="eroforrasok/ikonok/camera_FILL0_wght400_GRAD0_opsz24.svg">
 	<style>
 @import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
@@ -44,8 +45,8 @@ body {
 	/*aspect-ratio: 1 / 1;*/
 	object-fit: cover;
 	transition: transform 1000ms;
+	border-radius: 0.5rem;
 }
-
 
 ul {
 	list-style: none;
@@ -59,6 +60,7 @@ ul {
 	width: 117rem;
 }
 
+
 figure {
 	margin: 0;
 	position: relative;
@@ -67,22 +69,6 @@ figure {
 
 
 
-	.footer {
-		bottom: 0;
-	letter-spacing:0.7px;
-        background-color: white;
-        position: fixed;
-        /*font-weight: 400;*/
-        width: 100%;
-		height: 40px;
-		padding: 0.7rem;
-        color: #000000;
-        font-size: 13px;
-        display: flex;
-        justify-content: space-between;
-        z-index: 2;
-        cursor: pointer;
-    }
 
 	a {
 		text-decoration-line: none;
@@ -459,107 +445,234 @@ margin-top: 8px;
 }
 
 
+
+.text-white-1 {
+  color: white;
+  font-weight: 500;
+}
+.text-blue {
+  font-size: 0.9rem;
+  color: var(--color-forgot);
+}
+.text-xl {
+  font-size: clamp(2rem, 10.4vw, 3.2rem);
+  font-weight: 600;
+}
+.text-lg {
+  font-size: clamp(1.2rem, 8.8vw, 2.8rem);
+  font-weight: 600;
+}
+.text-md {
+  font-size: clamp(0.8rem, 6vw, 1.6rem);
+  font-weight: 400;
+  line-height: 1.3;
+}
+.text-md-1 {
+  font-size: clamp(0.8rem, 4.8vw, 1.6rem);
+  font-weight: 300;
+  line-height: 1.3;
+}
+.text-sm {
+  font-size: clamp(0.6rem, 4.5vw, 1.2rem);
+  font-weight: 300;
+  line-height: 1.5;
+}
+.text-terms {
+  font-size: 0.8rem;
+  color: grey;
+}
+.text-error {
+  position: absolute;
+  left: 0.1rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: orange;
+  display: none;
+}
+.text-center {
+  text-align: center;
+}
+.text-underline {
+  cursor: pointer;
+}
+.text-underline:hover {
+  text-decoration: underline;
+}
+
+/* Grid ----------------------------------------------- */
+
+.border-gray {
+  border-bottom: 0.4rem solid var(--color-input);
+}
+.grid-reversed {
+  order: 2;
+}
+
+/* Spacing -------------------------------------------- */
+
+.margin-top {
+  margin-top: 1rem;
+}
+.margin-top-1 {
+  margin-top: 1.4rem;
+}
+.margin-bottom-1 {
+  margin-bottom: 1.4rem;
+}
+.margin-inline {
+  margin-inline: auto;
+}
+.margin-left {
+  margin-left: 0.6rem;
+}
+
+
+.footer {
+  padding: 3rem;
+}
+.footer-container {
+  display: grid;
+  max-width: 50rem;
+  gap: 1.6rem;
+  color: gray;
+}
+.footer-black {
+  background-color: black;
+}
+.links {
+  display: flex;
+  line-height: 1.7;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+
+
+
 </style>
 </head>
 <body>
 
 
 	<div>
-		<a class="navocska" style="color: #e50914;" href="fooldal.html">MAFILM</a> <a class="navocska2"href="fooldal.html">Főoldal</a> <a class="navocska2"href="filmek.html">Filmek</a> <a class="navocska2"href="listam.html">Listám</a>
+		<a class="navocska" style="color: #e50914;" href="fooldal.html">MAFILM</a> <a class="navocska2"href="fooldal.html">Főoldal</a> <a class="navocska2"href="filmek.html">Filmek</a> <a class="navocska2"href="listam.html">Saját lista</a>
 	  </div>
 
 <div class="kutya">
 <ul>
 	<li>
 			<figure>
-				<img id="n1" src="img/2.jpg" alt=""> 
+				<img id="n1" src="img/alt.jpg" alt=""> 
 			</figure>
 	
 	</li>
 	<li>
 		<figure>
-			<img src="img/2.jpg" alt=""> 
+			<img id="n2" src="img/alt.jpg" alt=""> 
 		</figure>
 
 	</li>
 	<li>
 		<figure>
-			<img src="img/2.jpg" alt=""> 
+			<img id="n3" src="img/alt.jpg" alt=""> 
 		</figure>
 	
 	</li>
 	<li>
 		<figure>
-			<img src="img/2.jpg" alt=""> 
+			<img id="n4" src="img/alt.jpg" alt=""> 
 		</figure>
 	
 	</li>
 	<li>
 		<figure>
-			<img src="img/2.jpg" alt=""> 
+			<img id="n5" src="img/alt.jpg" alt=""> 
 		</figure>
 	</li>
 	<li>
 		<figure>
-			<img src="img/2.jpg" alt=""> 
+			<img id="n6" src="img/alt.jpg" alt=""> 
 		</figure>
 	</li>
 	<li>
 		<figure>
-			<img src="img/2.jpg" alt=""> 
+			<img id="n7" src="img/alt.jpg" alt=""> 
 		</figure>
 	</li>
 	<li>
 		<figure>
-			<img src="img/2.jpg" alt=""> 
+			<img id="n8" src="img/alt.jpg" alt=""> 
 		</figure>
 	</li>
 	<li>
 		<figure>
-			<img src="img/2.jpg" alt=""> 
+			<img id="n9" src="img/alt.jpg" alt=""> 
 		</figure>
 	</li>
 	<li>
 		<figure>
-			<img src="img/2.jpg" alt=""> 
+			<img id="n10" src="img/alt.jpg" alt=""> 
 		</figure>
 	</li>
 	<li>
 		<figure>
-			<img src="img/2.jpg" alt=""> 
+			<img id="n11" src="img/alt.jpg" alt=""> 
 		</figure>
 	</li>
 	<li>
 		<figure>
-			<img src="img/2.jpg" alt=""> 
+			<img id="n12" src="img/alt.jpg" alt=""> 
 		</figure>
 	</li>
 	<li>
 		<figure>
-			<img src="img/2.jpg" alt=""> 
+			<img id="n13"  src="img/alt.jpg" alt=""> 
 		</figure>
 	</li>
 	<li>
 		<figure>
-			<img src="img/2.jpg" alt=""> 
+			<img id="n14" src="img/alt.jpg" alt=""> 
 		</figure>
 	</li>	
 	<li>
 		<figure>
-			<img src="img/2.jpg" alt=""> 
+			<img id="n15" src="img/alt.jpg" alt=""> 
 		</figure>
 </li>
-<li>
-	<figure>
-		<img src="img/2.jpg" alt=""> 
-	</figure>
 
-</li>
 </ul>
 </div>
 
 
+<footer class="footer footer-black">
+    <div class="footer-container margin-inline">
+      <p>
+        MAFILM <br />
+        Made by Gabor Nagy & Adam Szalkai-Szabo
+      </p>
+      <div class="links">
+        <ul class="">
+          <li><a class="text-terms text-underline" href="">Fusce Mollis</a></li>
+          <li><a class="text-terms text-underline" href="">Aliquam</a></li>
+          <li><a class="text-terms text-underline" href="">Sed Quis</a></li>
+        </ul>
 
+        <ul>
+          <li><a class="text-terms text-underline" href="">Orci Varius</a></li>
+          <li><a class="text-terms text-underline" href="">Sed a Dictum</a></li>
+          <li><a class="text-terms text-underline" href="">Duis Efficitur</a></li>
+        </ul>
+
+        <ul>
+          <li><a class="text-terms text-underline" href="">Pellentesque</a></li>
+            <li><a class="text-terms text-underline" href="">Fusce</a></li>
+        </ul>
+
+        <a class="text-terms text-underline" href="">Cras Enim</a>
+      </div>
+
+    </div>
+  </footer>
 
 
 	
@@ -568,8 +681,67 @@ margin-top: 8px;
 const myArray2 = localStorage.clickcount.split("*");
 //document.getElementById("n1").innerHTML = myArray2[1];
 
+if (myArray2[1] != undefined) {
 var n1 = document.getElementById("n1");
 n1.src = myArray2[1];
+}
+if (myArray2[2] != undefined) {
+var n2 = document.getElementById("n2");
+n2.src = myArray2[2];
+}
+if (myArray2[3] != undefined) {
+var n3 = document.getElementById("n3");
+n3.src = myArray2[3];
+}
+if (myArray2[4] != undefined) {
+var n4 = document.getElementById("n4");
+n4.src = myArray2[4];
+}
+if (myArray2[5] != undefined) {
+var n5 = document.getElementById("n5");
+n5.src = myArray2[5];
+}
+if (myArray2[6] != undefined) {
+var n6 = document.getElementById("n6");
+n6.src = myArray2[6];
+}
+if (myArray2[7] != undefined) {
+var n7 = document.getElementById("n7");
+n7.src = myArray2[7];
+}
+if (myArray2[8] != undefined) {
+var n8 = document.getElementById("n8");
+n8.src = myArray2[8];
+}
+if (myArray2[9] != undefined) {
+var n9 = document.getElementById("n9");
+n9.src = myArray2[9];
+}
+if (myArray2[10] != undefined) {
+var n10 = document.getElementById("n10");
+n10.src = myArray2[10];
+}
+if (myArray2[11] != undefined) {
+var n11 = document.getElementById("n11");
+n11.src = myArray2[11];
+}
+if (myArray2[12] != undefined) {
+var n12 = document.getElementById("n12");
+n12.src = myArray2[12];
+}
+if (myArray2[13] != undefined) {
+var n13 = document.getElementById("n13");
+n13.src = myArray2[13];
+}
+if (myArray2[14] != undefined) {
+var n14 = document.getElementById("n14");
+n14.src = myArray2[14];
+}
+if (myArray2[15] != undefined) {
+var n15 = document.getElementById("n15");
+n15.src = myArray2[15];
+}
+
 
 	</script>
 	</body>
