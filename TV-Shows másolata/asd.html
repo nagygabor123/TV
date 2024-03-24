@@ -1,0 +1,59 @@
+<!--<!DOCTYPE html>
+<html>
+<body>
+
+<h1>The Window Object</h1>
+<h2>The localStorage Property</h2>
+
+<p>Saved name is:</p>
+<p id="demo"></p>
+
+
+
+<img id="demo2" src="asd.jpg" alt="Girl in a jacket" width="500" height="600">
+
+<script>
+// Set Item
+
+var value = ["aa", "bb", "https://www.guidetrip.info/asset/img/gallery_resort/5abb449619fc4.jpg"]
+localStorage.setItem("testKey", JSON.stringify(value[2]));
+var test = JSON.parse(localStorage.getItem("testKey"));
+//document.getElementById("demo").innerHTML = localStorage.getItem("testKey");
+
+var Demo2 = document.getElementById("demo2");
+
+	Demo2.src = test; 
+
+
+
+</script>
+
+</body>
+</html>-->
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function clickCounter() {
+  if (typeof(Storage) !== "undefined") {
+    //if (localStorage.clickcount) {
+      localStorage.clickcount = localStorage.clickcount += "*asd.jpg";
+    /*} else {
+      localStorage.clickcount += "ELSO";
+    }*/
+    document.getElementById("result").innerHTML = localStorage.clickcount;
+  } /*else {
+    document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
+  }*/
+}
+</script>
+</head>
+<body>
+
+<p><button onclick="clickCounter()" type="button">Click me!</button></p>
+<div id="result"></div>
+<!--<p>Click the button to see the counter increase.</p>
+<p>Close the browser tab (or window), and try again, and the counter will continue to count (is not reset).</p>-->
+
+</body>
+</html>

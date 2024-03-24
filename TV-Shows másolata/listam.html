@@ -115,6 +115,9 @@ header #search-movie {
     </style>
 </head>
 <body>
+
+	<div id="result"></div>
+
 	<div id="wrapper">
 		<header>
 			<h1>Movie Watchlist</h1>
@@ -138,13 +141,7 @@ header #search-movie {
 	<script>
 
 
-
-var value = ["aa","bb","cc"]
-localStorage.setItem("testKey", JSON.stringify(value[2]));
-var test = JSON.parse(localStorage.getItem("testKey"));
-alert(test);
-
-
+document.getElementById("result").innerHTML = localStorage.clickcount;
 
 
 
