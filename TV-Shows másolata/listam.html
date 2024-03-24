@@ -136,7 +136,19 @@ header #search-movie {
 		</form>
 	</div>
 	<script>
-        
+
+
+
+var value = ["aa","bb","cc"]
+localStorage.setItem("testKey", JSON.stringify(value[2]));
+var test = JSON.parse(localStorage.getItem("testKey"));
+alert(test);
+
+
+
+
+
+
 let movieList = document.querySelector("#movie-list");
 
 //delete movies
