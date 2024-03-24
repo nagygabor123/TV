@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Mafilm - Filmek</title>
+  <title>MAFILM - Filmek</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
   <link rel="stylesheet" href="package/css/swiper.min.css">
   <link rel="stylesheet" href="css/styles.css">
@@ -19,7 +19,7 @@
 
 
   <div>
-    <a class="navocska" style="color: #e50914;" href="index.html">MAFILM</a> <a class="navocska2"href="index.html">Főoldal</a> <a class="navocska2"href="filmek.html">Filmek</a> <a class="navocska2"href="">Listám</a>
+    <a class="navocska" style="color: #e50914;" href="fooldal.html">MAFILM</a> <a class="navocska2"href="fooldal.html">Főoldal</a> <a class="navocska2"href="filmek.html">Filmek</a> <a class="navocska2"href="listam.html">Listám</a>
   </div>
 
   
@@ -245,11 +245,12 @@
     </div>
     <button class="button-5 youtube-link" style="background-color: white; color: black;">Lejátszás</button>
     <button class="button-5" style="background-color: grey; color: white;">Több infó</button>
+    <button class="button-51" onclick="hozzadas(this);" style="background-color: green; color: white;">+</button>
   </div>
 
 
     <div>
-      <a class="navocska" style="color: #e50914;" href="index.html">MAFILM</a> <a class="navocska2"href="index.html">Főoldal</a> <a class="navocska2"href="filmek.html">Filmek</a> <a class="navocska2"href="">Listám</a>
+      <a class="navocska" style="color: #e50914;" href="fooldal.html">MAFILM</a> <a class="navocska2"href="fooldal.html">Főoldal</a> <a class="navocska2"href="filmek.html">Filmek</a> <a class="navocska2"href="listam.html">Listám</a>
     </div>
     <span onclick="this.parentElement.style.display='none'" class="closebtn">
       <div>Vissza </div> <!--➔-->
@@ -375,9 +376,13 @@
 
   var tempArray = "";
 
+
+
+  let filmNev = "";
+
 	function myFunction(imgs) {
 	var expandImg = document.getElementById("expandedImg");
-	var imgText = document.getElementById("imgtext");
+	//var imgText = document.getElementById("imgtext");
   var imgaltText = document.getElementById("imgaltText");
 	var btn = document.getElementById("btn");
 	expandImg.src = imgs.src; //imgs.src
@@ -406,14 +411,40 @@
 
 
 
-  imgText.innerHTML = myArray[1];
+
+  const dbParam = JSON.stringify({table:"customers",limit:20});
+const xmlhttp = new XMLHttpRequest();
+xmlhttp.onload = function() {
+  const myObj = JSON.parse(this.responseText);
+ /* let text = "<table border='1'>"
+  for (let x in myObj) {
+    text += "<tr><td>" + myObj[x].name + "</td></tr>";
+  }
+  text += "</table>"*/    
+  document.getElementById("imgtext").innerHTML = myObj[2];
+}
+xmlhttp.open("POST", "demo_file_array.php");
+xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+xmlhttp.send("x=" + dbParam);
+
+
+
+
+
+
+  //imgText.innerHTML = myArray[1];
   imgaltText.innerHTML = myArray[2];
 
   tempArray = myArray[0];
+
+
+  filmNev = myArray[1];
   //document.getElementById("demo").innerHTML = myArray[1]; 
 
 	expandImg.parentElement.style.display = "block";   ///block !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 	}
+
+
 
 	function myFunkcio() {
 	  var x = document.getElementById("vasarlas");
