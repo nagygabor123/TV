@@ -31,7 +31,7 @@ body {
 .containerss {
 margin-top: 40px;
   position: absolute;
-  top: 38em;
+  top: 36.2em;
   left: 0;
   width: 500px;
   height: 100vw;
@@ -79,25 +79,7 @@ cursor: pointer;
   
 }
 
-::-webkit-scrollbar {
-  width: 10px;
-}
 
-/* Track */
-::-webkit-scrollbar-track {
-  background: #f1f1f100; 
-}
- 
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #888; 
-  border-radius: 4px;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #555; 
-}
 
 .swiper-container {
   width: 100%;
