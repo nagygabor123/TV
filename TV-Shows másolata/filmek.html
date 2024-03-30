@@ -439,41 +439,45 @@
 
 
   const folyt = sessionStorage.clickcount.split("*");
-  //folyt.reverse();
+  const index = folyt.indexOf("undefined");
+  folyt.splice(index, 1);
+
+  folyt.reverse();
+ 
 
   var nullas = document.getElementById("nullas");
-  if (folyt[1] != undefined) {
-  document.getElementById("nullas").src = folyt[1];
+  if (folyt[0] != undefined) {
+  document.getElementById("nullas").src = folyt[0];
   } else {
     document.getElementById("nullas").src = "img/alt.jpg";
   }
 
   var egyes = document.getElementById("egyes");
-  if (folyt[2] != undefined) {
-  document.getElementById("egyes").src = folyt[2];
+  if (folyt[1] != undefined) {
+  document.getElementById("egyes").src = folyt[1];
   } else {
     document.getElementById("egyes").src = "img/alt.jpg";
   }
 
 
   var kettes = document.getElementById("kettes");
-  if (folyt[3] != undefined) {
-  document.getElementById("kettes").src = folyt[3];
+  if (folyt[2] != undefined) {
+  document.getElementById("kettes").src = folyt[2];
   } else {
     document.getElementById("kettes").src = "img/alt.jpg";
   }
 
   var harmas = document.getElementById("harmas");
-  if (folyt[4] != undefined) {
-  document.getElementById("harmas").src = folyt[4];
+  if (folyt[3] != undefined) {
+  document.getElementById("harmas").src = folyt[3];
   } else {
     document.getElementById("harmas").src = "img/alt.jpg";
   }
 
 
   var negyes = document.getElementById("negyes");
-  if (folyt[5] != undefined) {
-  document.getElementById("negyes").src = folyt[5];
+  if (folyt[4] != undefined) {
+  document.getElementById("negyes").src = folyt[4];
   } else {
     document.getElementById("negyes").src = "img/alt.jpg";
   }
