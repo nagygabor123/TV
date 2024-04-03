@@ -2,6 +2,7 @@
   "dependencies": {
     "browserify": "^17.0.0",
     "browserify-fs": "^1.0.0",
+    "express": "^4.19.2",
     "fs": "^0.0.1-security",
     "mysql": "^2.18.1"
   }
