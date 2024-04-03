@@ -201,9 +201,7 @@
     <div>
       <a class="navocska" style="color: #e50914;" href="fooldal.html">MAFILM</a> <a class="navocska2"href="fooldal.html">Főoldal</a> <a class="navocska2"href="filmek.html">Filmek</a> <a class="navocska2"href="listam.html">Saját lista</a>
     </div>
-    <span onclick="this.parentElement.style.display='none'" class="closebtn">
-      <div>Vissza </div> <!--➔-->
-  </span>
+    <a class="closebtn"  href="filmek.html">Vissza</a> 
   
 
 
@@ -383,7 +381,7 @@
   filmFoto = expandImg.src;
 
 
-  sessionStorage.clickcount = sessionStorage.clickcount += "*" + myArray[9];
+  sessionStorage.clickcount = sessionStorage.clickcount += "@" + text;
 
 
   //document.getElementById("demo").innerHTML = myArray[1]; 
@@ -392,24 +390,31 @@
 	}
 
 
-  const folyt = sessionStorage.clickcount.split("*");
+  const folyt = sessionStorage.clickcount.split("@");
   const index = folyt.indexOf("undefined");
   folyt.splice(index, 1);
 
   folyt.reverse();
+
+  
  
 
   var nullas = document.getElementById("nullas");
   
 if (folyt[0] != undefined) {
-  document.getElementById("nullas").src = folyt[0];
+  document.getElementById("nullas").alt = folyt[0];
+  const folyt2 = folyt[0].split("*")
+  document.getElementById("nullas").src = folyt2[9];
+
   } else {
     console.log("un");//document.getElementById("nullas").src = "img/alt.jpg";
   }
 
   var egyes = document.getElementById("egyes");
   if (folyt[1] != undefined) {
-  document.getElementById("egyes").src = folyt[1];
+  document.getElementById("egyes").alt = folyt[1];
+  const folyt2 = folyt[1].split("*")
+  document.getElementById("egyes").src = folyt2[9];
   } else {
     console.log("un");//document.getElementById("egyes").src = "img/alt.jpg";
   }
@@ -417,14 +422,18 @@ if (folyt[0] != undefined) {
 
   var kettes = document.getElementById("kettes");
   if (folyt[2] != undefined) {
-  document.getElementById("kettes").src = folyt[2];
+  document.getElementById("kettes").alt = folyt[2];
+  const folyt2 = folyt[2].split("*")
+  document.getElementById("kettes").src = folyt2[9];
   } else {
     console.log("un");//document.getElementById("kettes").src = "img/alt.jpg";
   }
 
   var harmas = document.getElementById("harmas");
   if (folyt[3] != undefined) {
-  document.getElementById("harmas").src = folyt[3];
+  document.getElementById("harmas").alt = folyt[3];
+  const folyt2 = folyt[3].split("*")
+  document.getElementById("harmas").src = folyt2[9];
   } else {
     console.log("un");//document.getElementById("harmas").src = "img/alt.jpg";
   }
@@ -432,21 +441,29 @@ if (folyt[0] != undefined) {
 
   var negyes = document.getElementById("negyes");
   if (folyt[4] != undefined) {
-  document.getElementById("negyes").src = folyt[4];
+  document.getElementById("negyes").alt = folyt[4];
+  const folyt2 = folyt[4].split("*")
+  document.getElementById("negyes").src = folyt2[9];
   } else {
     console.log("un");//document.getElementById("negyes").src = "img/alt.jpg";
   }
 
+
+
   var otos = document.getElementById("otos");
   if (folyt[5] != undefined) {
-  document.getElementById("otos").src = folyt[5];
+  document.getElementById("otos").alt = folyt[5];
+  const folyt2 = folyt[5].split("*")
+  document.getElementById("otos").src = folyt2[9];
   } else {
     console.log("un");//document.getElementById("negyes").src = "img/alt.jpg";
   }
 
   var hatos = document.getElementById("hatos");
   if (folyt[6] != undefined) {
-  document.getElementById("hatos").src = folyt[6];
+  document.getElementById("hatos").alt = folyt[6];
+  const folyt2 = folyt[6].split("*")
+  document.getElementById("hatos").src = folyt2[9];
   } else {
     console.log("un");//document.getElementById("negyes").src = "img/alt.jpg";
   }
