@@ -11,10 +11,18 @@ const connection = mysql.createConnection({
 
 connection.connect();
 
-app.get('/data', (req, res) => {
+// Statikus fájlok kiszolgálása (például az index.html)
+app.use(express.static('public'));
+
+// Útvonal a videók lekérdezéséhez
+app.get('/videos', (req, res) => {
     connection.query('SELECT cim, ytlink FROM youtube_videos', (error, results) => {
         if (error) throw error;
-        res.json(results);
+        const videos = results.map(result => ({
+            cim: result.cim,
+            ytlink: result.ytlink
+        }));
+        res.json(videos); // Az adatok JSON formátumban kerülnek elküldésre
     });
 });
 
@@ -22,7 +30,3 @@ const port = 3000;
 app.listen(port, () => {
     console.log(`A szerver fut a http://localhost:${port} címen`);
 });
-
-//npm i
-//npm install express
-//npm install mysql

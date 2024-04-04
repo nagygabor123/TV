@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Videos</title>
+</head>
+<body>
+    <h1>YouTube Videos</h1>
+    <ul id="videos-list">
+        <!-- A lekérdezett adatokat ide fogjuk kiírni -->
+    </ul>
+
+    <script>
+        // Az adatok betöltése AJAX kéréssel
+        window.onload = function() {
+            fetch('/videos')
+            .then(response => response.json())
+            .then(data => {
+                const videosList = document.getElementById('videos-list');
+                data.forEach(video => {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = `${video.cim}: ${video.ytlink}`;
+                    videosList.appendChild(listItem);
+                });
+            })
+            .catch(error => console.error('Hiba történt:', error));
+        };
+    </script>
+</body>
+</html>
