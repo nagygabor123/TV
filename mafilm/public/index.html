@@ -1,128 +1,785 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <title>MAFILM - Filmek</title>
-	<link rel="icon" type="image/x-icon" href="/img/icon.png">
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
-  <link rel="stylesheet" href="package/css/swiper.min.css">
-  <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="./css/film.css">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   
+	<link rel="icon" type="image/x-icon" href="/img/logo.ico">
+  <title>MAFILM - Főoldal</title>
+  <style>
+
+
+
+    @import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Staatliches&display=swap');
+
+
+
+:root {
+  --color-invalid: #e50914;
+  --color-invalid-hover: #f11722;
+  --color-valid: rgb(13, 150, 65);
+  --color-forgot: #0071eb;
+  --color-forgot-hover: #2786ec;
+  --color-input: gray;
+  --color-bg-2: rgba(0, 0, 0, 0.4);
+  --header-box-shadow: inset 10rem 10rem 24rem rgba(0, 0, 0, 0.5),
+    inset -10rem -10rem 24rem rgba(0, 0, 0, 0.5);
+}
+
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Text, Tag Style ------------------------------------ */
+
+h1 {
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 1.3;
+}
+h2 {
+  font-size: 0.84rem;
+  font-weight: 300;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+a,
+li {
+  text-decoration: none;
+  list-style: none;
+}
+
+img,
+video {
+  max-width: 100%;
+}
+body {
+  /*font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;*/
+    font-family: "Roboto", sans-serif;
+    /*font-weight: 400;*/
+  background-color: black;
+  color: white;
+}
+
+/* Text Style ----------------------------------------- */
+
+.text-white-1 {
+  color: white;
+  font-weight: 500;
+}
+.text-blue {
+  font-size: 0.9rem;
+  color: var(--color-forgot);
+}
+.text-xl {
+  font-size: clamp(2rem, 10.4vw, 3.2rem);
+  font-weight: 600;
+}
+.text-lg {
+  font-size: clamp(1.2rem, 8.8vw, 2.8rem);
+  font-weight: 600;
+}
+.text-md {
+  font-size: clamp(0.8rem, 6vw, 1.6rem);
+  font-weight: 400;
+  line-height: 1.3;
+}
+.text-md-1 {
+  font-size: clamp(0.8rem, 4.8vw, 1.6rem);
+  font-weight: 300;
+  line-height: 1.3;
+}
+.text-sm {
+  font-size: clamp(0.6rem, 4.5vw, 1.2rem);
+  font-weight: 300;
+  line-height: 1.5;
+}
+.text-terms {
+  font-size: 0.8rem;
+  color: grey;
+}
+.text-error {
+  position: absolute;
+  left: 0.1rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: orange;
+  display: none;
+}
+.text-center {
+  text-align: center;
+}
+.text-underline {
+  cursor: pointer;
+}
+.text-underline:hover {
+  text-decoration: underline;
+}
+
+/* Grid ----------------------------------------------- */
+
+.border-gray {
+  border-bottom: 0.4rem solid var(--color-input);
+}
+.grid-reversed {
+  order: 2;
+}
+
+/* Spacing -------------------------------------------- */
+
+.margin-top {
+  margin-top: 1rem;
+}
+.margin-top-1 {
+  margin-top: 1.4rem;
+}
+.margin-bottom-1 {
+  margin-bottom: 1.4rem;
+}
+.margin-inline {
+  margin-inline: auto;
+}
+.margin-left {
+  margin-left: 0.6rem;
+}
+
+/* Button -------------------------------------------- */
+
+button,
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+  font-size: 1.1em;
+  font-family: inherit;
+  font-weight: inherit;
+  padding: 1.1em;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  height: 3.2rem;
+  max-width: 100%;
+}
+.btn-primary {
+  font-size: 1.2em;
+  background: var(--color-invalid);
+  margin-inline: auto;
+}
+.btn-signin {
+  height: 2.2rem;
+  padding: 0.8em;
+  background-color: var(--color-invalid);
+  font-size: 1em;
+}
+.btn-primary:hover,
+.btn-signin:hover {
+  background-color: var(--color-invalid-hover);
+}
+
+/* Logo ---------------------------------------------- */
+
+.logo {
+  margin-top: 0.4rem;
+  width: 8rem;
+}
+
+/* Nav ----------------------------------------------- */
+
+.nav {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 1.4rem 3.2rem;
+  z-index: 2;
+}
+.nav-4 {
+  position: absolute;
+  justify-content: space-between;
+}
+.right {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+/* Input Field & State-------------------------------- */
+
+::placeholder {
+  color: transparent;
+}
+::-ms-input-placeholder {
+  color: transparent;
+}
+label {
+  color: white;
+  transition: top 200ms ease-in, left 200ms ease-in, font-size 200ms ease-in;
+}
+.input {
+  position: relative;
+}
+.input-field {
+  border: none;
+  outline: none;
+  font-size: 1em;
+  border-radius: 4px;
+  padding-inline: 1.36em;
+  padding-block: 1.8em 1em;
+  height: 4rem;
+  width: 100%;
+}
+.input-label {
+  display: grid;
+  position: absolute;
+  top: 1.36rem;
+  left: 1.36rem;
+  color: gray;
+  transition: top 200ms ease-in, left 200ms ease-in, font-size 200ms ease-in;
+}
+.input-field:focus ~ .label-size,
+.input-field:not(:placeholder-shown) ~ .label-size {
+  top: 0.6rem;
+  left: 1.36rem;
+  font-size: 0.9em;
+}
+.input-field:valid {
+  border: 2px solid var(--color-valid);
+}
+.input-field:not(:placeholder-shown):invalid {
+  border-bottom: 3px solid orange;
+}
+.input-field:not(:placeholder-shown):invalid ~ .text-error {
+  display: block;
+}
+
+/* Header Container ------------------------------------------------------ */
+
+.header {
+  min-height: 90vh;
+  background: url("img/hatter2.jpg") center/cover no-repeat;
+  overflow: hidden;
+}
+
+
+
+/*.header::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-bg-2);
+  box-shadow: var(--header-box-shadow);
+  border-bottom: 0.4rem solid var(--color-input);
+  z-index: 1;
+}*/
+
+
+.headerke{
+  position: relative;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.header-container {
+  max-width: 42rem;
+  padding-block: 4rem;
+  padding-inline: 4%;
+  z-index: 2;
+}
+
+/* Features ------------------------------------------ */
+
+.features {
+  
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: clamp(0.4rem, 1vh, 2rem);
+  padding-block: 4rem;
+  padding-inline: 6%;
+  max-width: 80rem;
+  min-height: 60vh;
+}
+.text-area {
+  display: grid;
+  gap: 1rem;
+}
+.img-area {
+  position: relative;
+  overflow: hidden;
+}
+.grid-reversed {
+  order: 2;
+}
+.video-1 {
+  pointer-events: none;
+  position: absolute;
+  height: 74%;
+  width: 73.2%;
+  top: 11%;
+  left: 13%;
+  z-index: -1;
+}
+.video-2 {
+  pointer-events: none;
+  position: absolute;
+  height: 78%;
+  width: 63%;
+  top: -6%;
+  left: 18%;
+  z-index: -1;
+}
+.download {
+  position: absolute;
+  bottom: 7%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 0.6rem;
+  border: 1px solid gray;
+  border-radius: 0.6rem;
+  background: black;
+  width: 68%;
+}
+.download :first-child {
+  width: 18%;
+}
+.download :last-child {
+  width: 14%;
+}
+
+/* F.A.Q --------------------------------------------- */
+
+.faq {
+  display: grid;
+  gap: 2rem;
+  padding-block: 4rem;
+  padding-inline: 3%;
+}
+.faq-accordion {
+  display: grid;
+  gap: 0.4rem;
+  max-width: 50rem;
+}
+.faq-input {
+  display: none;
+}
+.faq-label {
+  border-radius: 8px;
+
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 1rem;
+  padding-inline: 3%;
+  background-color: var(--color-input);
+  border-bottom: 4px solid black;
+}
+.faq-content {
+  border-radius: 8px;
+
+  background-color: var(--color-input);
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in, padding 0.3s ease-in;
+}
+.faq-content p {
+  margin: 2rem;
+}
+.faq-input:checked ~ .faq-content {
+  max-height: 60rem;
+  transition: max-height 0.3s ease-in;
+}
+.faq-input:checked ~ .faq-label i {
+  transform: rotate(45deg);
+  transition: max-height 0.3s ease-in, padding 0.3s ease-in;
+}
+.membership .input {
+  max-width: 40rem;
+  margin: 0 auto;
+}
+
+
+/* Media Query --------------------------------------- */
+
+/* Nav Media Query */
+
+@media (320px <= width <= 640px) {
+  .nav {
+    padding-inline: 1rem;
+  }
+  .logo {
+    width: 6rem;
+  }
+}
+
+/* Body Media Query */
+
+@media (768px <= width <= 940px) {
+  .header {
+    min-height: 72vh;
+  }
+}
+@media (320px <= width <= 940px) {
+  .features {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .grid-reversed {
+    order: 0;
+  }
+  .img-area .devices {
+    width: 86%;
+  }
+  .video-2 {
+    height: 80%;
+    width: 53.3%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .download {
+    width: 50%;
+  }
+  .faq-content p {
+    margin: 1rem;
+  }
+}
+@media (450px <= width <= 640px) {
+  .download {
+    width: 70%;
+  }
+}
+@media (350px <= width <= 520px) {
+  .header {
+    min-height: 93vh;
+  }
+  .down {
+    display: block;
+  }
+  .download {
+    width: 80%;
+  }
+}
+@media (320px <= width <= 350px) {
+  .header {
+    min-height: 80vh;
+  }
+  .down {
+    display: block;
+  }
+  .download {
+    width: 86%;
+    padding: 0.2rem;
+  }
+}
+
+
+.navocska{
+  letter-spacing: 4px;
+  text-decoration: none;
+  overflow : hidden;
+
+
+
+
+
+  font-weight: 400;
+  padding-left: 3.3em;
+  margin: 30px;
+    height: 40px;
+    color: #ffffff;
+    font-size: 32px;
+    display: flex;
+    justify-content: space-between;
+ 
+    cursor: pointer;
+    text-transform: uppercase;
+
+
+
+
+      position: absolute;
+      font-family: "Staatliches", sans-serif;
+    
+}
+
+.navocska2{
+  text-shadow: 2px 2px 4px #000000;
+  left: 18em;
+  align-items: center;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+
+  font-size: 15px;
+  justify-content: center;
+  line-height: 1.25;
+  margin-top: 1.6rem;
+  margin-right: 0.2rem;
+  min-height: 3rem;
+  padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+  position: relative;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  width: auto;
+    
+}
+
+
+/* Footer -------------------------------------------- */
+
+.footer {
+  padding: 3rem;
+}
+.footer-container {
+  display: grid;
+  max-width: 50rem;
+  gap: 1.6rem;
+  color: gray;
+}
+.footer-black {
+  background-color: black;
+}
+.links {
+  display: flex;
+  line-height: 1.7;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+/* Language Option ----------------------------------- */
+
+.language {
+  position: relative;
+}
+.language-select {
+  appearance: none;
+  cursor: pointer;
+  height: 2.4rem;
+  max-width: 12rem;
+  border-radius: 0.2rem;
+  padding-inline: 2.4rem;
+  outline: none;
+  color: gray;
+  background-color: transparent;
+}
+.language-icon {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+}
+.globe {
+  position: absolute;
+  left: 1rem;
+}
+.chevron {
+  position: absolute;
+  left: 10rem;
+}
+
+.top {
+  height: 2.2rem;
+  padding-inline: 0.6rem;
+  width: 3.6rem;
+  color: white;
+  font-weight: 600;
+  border: 1.8px solid white;
+}
+.top-icon {
+  color: white;
+}
+.chevron-top {
+  position: absolute;
+  left: 2.4rem;
+  font-size: 0.6rem;
+  font-weight: 600;
+}
+
+::-webkit-scrollbar {
+      display: none;
+    }
+
+
+  </style>
 
 </head>
+
 <body>
 
-  <!--<div class="channel-logo" data-animation-in="fadeInLeft" data-delay-in="0.5">
-    <img src="./img/logo.png" class="c-logo" alt="" />
-  </div>-->
 
+
+ <!-- <nav class="nav nav-4">
+    <a href="">
+      <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Logonetflix.png/1600px-Logonetflix.png" alt="" />
+    </a>
+
+    <div class="right">
+      <div class="language">
+        <select class="language-select top" onchange="location=this.value;">
+          <option value="" selected>EN</option>
+          <option value="">ID</option>
+        </select>
+        <div class="language-icon top-icon">
+          <i class="fas fa-chevron-down chevron chevron-top"></i>
+        </div>
+      </div>
+      <a href="https://cdpn.io/pen/debug/ExpmRNy?authentication_hash=YvkgOLZyKVpk" class="btn btn-signin">Sign In</a>
+    </div>
+  </nav>-->
+
+  <header class="header">
 
   <div>
-    <a class="navocska" style="color: #e50914;" href="fooldal.html">MAFILM</a> <a class="navocska2"href="fooldal.html">Főoldal</a> <a class="navocska2"href="filmek.html">Filmek</a> <a class="navocska2"href="listam.html">Saját lista</a>
+    <a class="navocska" style="color: #e50914;" href="index.html">MAFILM</a> <a class="navocska2"href="index.html">Főoldal</a> <a class="navocska2"href="filmek.html">Filmek</a> <a class="navocska2"href="listam.html">Saját lista</a>
   </div>
+    <div class="headerke">
+    <div class="header-container margin-inline margin-top-1">
+      <p class="text-white text-xl margin-bottom-1 text-center">Rengeteg <span class="text-xl down">film, sorozat és még sok más.</span></p>
+      <p class="text-white text-md text-center">Nézd bárhol és bármikor lemondhatod.</p>
+      <p class="text-white text-sm margin-top text-center">Készen állsz? Add meg e-mail címed a fiókod létrehozásához.</p>
+      <form action="" class="input margin-top-1">
+        <input class="input-field" type="email" id="email" placeholder="email" pattern="[A-Za-z0-9._-]+@[A-Za-z]+\.[a-z]{2,}$" autocomplete="off" required />
 
-  
- <!-- <video width="1920" autoplay muted loop>
-    <source src="img/trailer.mp4" type="video/mp4">
-</video>-->
+        <label for="email" class="input-label label-size">E-mail cím</label>
 
-  <div class="netflix-slider">
-    <h1 id="teszt0" style="margin-top: 1em;">Megtekintési előzmény</h1>
-    <div class="swiper-container">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide"><img id="nullas" onclick="myFunction(this);" src="img/1.jpg" alt="PeWnAFeqMUA*Elemi*A Disney és a Pixar új filmje, az ELEMI egy olyan városban játszódik, ahol egymás mellett élnek a tűz-, víz-, föld- és levegőlakók. Parázs, a talpraesett, gyors észjárású és tüzes fiatal nő, illetve Örvény, a mókás, életvidám, laza srác találkozása alapjaiban változatatja meg mindazt, amit az őket körülvevő világról hittek.*https://media.port.hu/images/001/575/094.webp*https://media.port.hu/images/001/575/096.webp*https://media.port.hu/images/001/575/098.webp*https://s3.us-east-1.amazonaws.com/world-website-storage/wng-prod/_1500x937_crop_center-center_82_line/1774087/elemental13.jpg*https://www.columbian.com/wp-content/uploads/2023/06/Film_Review_-_Elemental_55099-315ec.jpg*https://media.npr.org/assets/img/2023/06/12/elemental-online-use-m551_11_pub.pub16.158_custom-7ec940496b02b4a347356a2de3f45dd612805184.jpg*https://sm.ign.com/ign_hu/screenshot/default/elemental-ver10-xxlg-crop_56g8.jpg"></div> 
-        <div class="swiper-slide"><img id="egyes" onclick="myFunction(this);" src="img/2.jpg" alt="1mR3r0JkJDI*Oppenheimer*A film J. Robert Oppenheimer fizikusról szól, aki kollégáival - köztük a magyar származású Teller Edével és Szilárd Leóval - a Manhattan Terv vezetőjeként az első atomfegyver létrehozásáért felelős. A találmány a II. világháborúban megváltoztatta a történelem menetét.*https://media.port.hu/images/001/581/442.webp*https://media.port.hu/images/001/581/440.webp*https://media.port.hu/images/001/581/444.webp*https://media.port.hu/images/001/580/288.webp*https://media.port.hu/images/001/580/290.webp*https://media.port.hu/images/001/553/656.webp*https://ma7media.storage.googleapis.com/sites/default/files/styles/freeform_large_9_2x/s3/2023-08/oppenheimer-cimlap.png.jpg?h=920929c4&itok=N-I4qz3T"></div> 
-        <div class="swiper-slide"><img id="kettes" onclick="myFunction(this);" src="img/3.jpg" alt="pBk4NYhWNMM*Barbie*Van ám olyan világ, ahol minden csodálatos! Mindig süt a nap, lenn a parton mindig lágyan hullámzik a tenger, és szörfdeszkákon, a nyugágyakban meg a bulizósabb helyeken sokféle, de mindig gyönyörű strandoló gyűlik össze: Barbie (Margot Robbie) és Ken (Ryan Gosling) meg a többi Barbie és Ken.*https://media.port.hu/images/001/573/040.webp*https://media.port.hu/images/001/573/044.webp*https://media.port.hu/images/001/573/048.webp*https://media.port.hu/images/001/573/052.webp*https://stories.uq.edu.au/contact-magazine/2023/barbie-in-the-real-world/assets/YIQlubQK0b/rev-1-barbie-tp-0002_high_res_jpeg-750x358.jpg*https://kep.cdn.indexvas.hu/1/0/5001/50019/500195/50019597_9e66c9df11edeab5cbc39cdbb558dcc1_wm.jpg*https://sm.ign.com/ign_hu/screenshot/default/mv5bnzjjzddimtutndrhos00mgizlwe3zjatztrjmtk2zdblywu5xkeyxkfq_t9h6.jpg"></div> 
-        <div class="swiper-slide"><img id="harmas" onclick="myFunction(this);" src="img/4.jpg" alt="B4AgA-iKk5M*Napóleon*A semmiből jött, elképesztő elszántsággal kapaszkodott a hatalomba, mindent megszerzett, majd mindent elveszített. Napóleon (Joaquin Phoenix) rendkívüli életet élt, a nagy francia forradalom közkatonájából, a harcos forradalmárból uralkodó, egész Európa leigázója lett.*https://media.port.hu/images/001/607/792.webp*https://media.port.hu/images/001/597/370.webp*https://media.port.hu/images/001/607/786.webp*https://media.port.hu/images/001/607/784.webp*https://media.port.hu/images/001/597/364.webp*https://media.port.hu/images/001/597/360.webp*https://s.24.hu/app/uploads/2023/11/022-masolat.jpg"></div> 
-        <div class="swiper-slide"><img id="negyes" onclick="myFunction(this);" src="img/5.jpg" alt="aUo59dyCnRw*Megfojtott virágok*A huszadik század fordulóján az olaj mesés vagyont hozott az oszázs törzs tagjainak, szinte egyik pillanatról a másikra valóságos krőzusok lettek. Az őslakosok pénze azonnal felkeltette a fehér nyerészkedők figyelmét, akik kezdetben megtévesztéssel, zsarolással és lopással próbálták őket megrövidíteni, majd gyilkossághoz folyamodtak.*https://media.port.hu/images/001/593/410.webp*https://media.port.hu/images/001/593/414.webp*https://media.port.hu/images/001/593/416.webp*https://media.port.hu/images/001/593/420.webp*https://media.port.hu/images/001/593/422.webp*https://media.port.hu/images/001/593/428.webp*https://www.apollopecs.hu/wp-content/uploads/importedmedia/1DXD1dMkd0H764jFdfJbL7ItJLD-1024x575.jpg"></div> 
-        <div class="swiper-slide"><img id="otos" onclick="myFunction(this);" src="img/6.jpg" alt="7FWNya4uDIU*Godzilla x Kong: Az Új Birodalom*A mindent eldöntő, minden eddiginél nagyobb háború nem ért véget azzal, hogy Kong és Godzilla szembetalálkozott és összemérte az erejét. Mert az ember most már kénytelen belenyugodni, hogy nem ő a legerősebb a földön*https://media.port.hu/images/001/631/352.webp*https://media.port.hu/images/001/631/364.webp*https://media.port.hu/images/001/631/348.webp*https://media.port.hu/images/001/609/360.webp*https://media.port.hu/images/001/609/358.webp*https://media.port.hu/images/001/631/346.webp*https://i.cdn29.hu/apix_collect_c/ngg_images/2403/26/godzilla_x_kong_az_uj_birodalom_214328_1_original_760x760.jpg"></div> 
-        <div class="swiper-slide"><img id="hatos" onclick="myFunction(this);" src="img/7.jpg" alt="F40Ao2blYTg*Szegény párák*Yorgos Lanthimos új filmje elképesztő történet Bella Baxter fantasztikus fejlődéséről. A fiatal nőt a zseniális elméjű és szokatlan módszereket alkalmazó tudós, Dr. Godwin Baxter hozza vissza az életbe. A férfi védelmét élvezve, Bella vágyik a tudásra.*https://media.port.hu/images/001/582/902.webp*https://media.port.hu/images/001/582/896.webp*https://media.port.hu/images/001/582/898.webp*https://media.port.hu/images/001/582/908.webp*https://media.port.hu/images/001/611/502.webp*https://media.port.hu/images/001/582/904.webp*https://madeinpecs.hu/files/2024/01/nagyjpg-20240125090450"></div> 
-     
-      </div>
-      
-      <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
+        <p class="text-error">Kérjük érvényes e-mail címet adj meg</p>
+
+        <button type="submit" class="btn-primary margin-top-1">
+          Vágjunk bele
+          <i class="fas fa-chevron-right margin-left"></i>
+        </button>
+      </form>
     </div>
   </div>
+  </header>
 
-  <div class="netflix-slider">
-    <h1>Népszerű a MAFILM-en</h1>
-    <div class="swiper-container">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide"><img id="e1" onclick="myFunction(this);" src="img/alt.jpg" alt=""></div> 
-        <div class="swiper-slide"><img id="e2" onclick="myFunction(this);" src="img/alt.jpg" alt=""></div> 
-        <div class="swiper-slide"><img id="e3" onclick="myFunction(this);" src="img/alt.jpg" alt=""></div> 
-        <div class="swiper-slide"><img id="e4" onclick="myFunction(this);" src="img/alt.jpg" alt=""></div> 
-        <div class="swiper-slide"><img id="e5" onclick="myFunction(this);" src="img/alt.jpg" alt=""></div> 
-        <div class="swiper-slide"><img id="e6" onclick="myFunction(this);" src="img/alt.jpg" alt=""></div> 
-        <div class="swiper-slide"><img id="e7" onclick="myFunction(this);" src="img/alt.jpg" alt=""></div> 
+  <section class="text-white">
+    <div class="features margin-inline">
+      <div class="text-area">
+        <p class="text-lg">Élvezd TV-n.</p>
+        <p class="text-md-1">Nézd a MAFILM-et, nem számít milyen típusú TV, mi mindenhol ott vagyunk.</p>
       </div>
-      
-      <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
-    </div>
-  </div>
-
-
-  <div class="netflix-slider">
-    <h1>Újdonságok</h1>
-    <div class="swiper-container">
-      <div class="swiper-wrapper">
-<div class="swiper-slide"><img id="e7" onclick="myFunction(this);" src="img/alt.jpg" alt=""></div>
-<div class="swiper-slide"><img id="e8" onclick="myFunction(this);" src="img/alt.jpg" alt=""></div>
-<div class="swiper-slide"><img id="e9" onclick="myFunction(this);" src="img/alt.jpg" alt=""></div>
-<div class="swiper-slide"><img id="e10" onclick="myFunction(this);" src="img/alt.jpg" alt=""></div>
-<div class="swiper-slide"><img id="e11" onclick="myFunction(this);" src="img/alt.jpg" alt=""></div>
-<div class="swiper-slide"><img id="e12" onclick="myFunction(this);" src="img/alt.jpg" alt=""></div>
-<div class="swiper-slide"><img id="e13" onclick="myFunction(this);" src="img/alt.jpg" alt=""></div>
+      <div class="img-area">
+        <img src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/tv.png" alt="" />
+        <video class="video-1" autoplay playsinline loop muted>
+          <source src="img/trailer.mp4" type="video/mp4" />
+        </video>
       </div>
-      
-      <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
     </div>
-  </div>
+  </section>
 
-<!--
-  <div class="netflix-slider">
-    <h1>Izgalmas filmek</h1>
-    <div class="swiper-container">
-      <div class="swiper-wrapper">
 
-        <div class="swiper-slide"><img id="e14" onclick="myFunction(this);" src="img/alt.jpg" alt="w"></div>
-        <div class="swiper-slide"><img id="e15" onclick="myFunction(this);" src="img/alt.jpg" alt=""></div>
-        <div class="swiper-slide"><img id="e15" onclick="myFunction(this);" src="img/alt.jpg" alt=""></div>
-        <div class="swiper-slide"><img onclick="myFunction(this);" src="img/alt.jpg" alt=""></div>
-        <div class="swiper-slide"><img onclick="myFunction(this);" src="img/alt.jpg" alt=""></div>
-        <div class="swiper-slide"><img onclick="myFunction(this);" src="img/alt.jpg" alt=""></div>
-        <div class="swiper-slide"><img onclick="myFunction(this);" src="img/alt.jpg" alt=""></div>
+
+  <section class="text-white">
+    <div class="features margin-inline">
+      <div class="text-area grid-reversed">
+        <p class="text-lg">Töltsd le, és nézd offline állapotban</p>
+        <p class="text-md-1">Könnyítsd meg magadnak a szórakozást és élvezd kedvenc filmjeidet.</p>
       </div>
-      
-      <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
+      <div class="img-area">
+        <img src="img/telefon.png" alt="" />
+        <div class="download">
+          <img src="https://lumiere-a.akamaihd.net/v1/images/p_junglecruise_21740_v2_bb7f0ae4.jpeg" alt="" />
+          <div class="download-text">
+         
+              <span class="text-white-1">Dzsungeltúra letöltése folyamatban...</span>
+            </div>
+            <img src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/download-icon.gif" alt="" />
+          </div>
+        </div>
     </div>
-  </div>
+  </section>
 
-
-  <div class="netflix-slider">
-    <h1>Lebilincselő filmek</h1>
-    <div class="swiper-container">
-      <div class="swiper-wrapper">
-		<div class="swiper-slide"><img onclick="myFunction(this);" src="img/alt.jpg" alt=""></div>
-    <div class="swiper-slide"><img onclick="myFunction(this);" src="img/alt.jpg" alt=""></div>
-    <div class="swiper-slide"><img onclick="myFunction(this);" src="img/alt.jpg" alt=""></div>
-    <div class="swiper-slide"><img onclick="myFunction(this);" src="img/alt.jpg" alt=""></div>
-    <div class="swiper-slide"><img onclick="myFunction(this);" src="img/alt.jpg" alt=""></div>
-    <div class="swiper-slide"><img onclick="myFunction(this);" src="img/alt.jpg" alt=""></div>
-    <div class="swiper-slide"><img onclick="myFunction(this);" src="img/alt.jpg" alt=""></div>
+  <section class="text-white">
+    <div class="features margin-inline">
+      <div class="text-area">
+        <p class="text-lg">Nézd bárhol</p>
+        <p class="text-md-1">Nézd laptopon, tableten, telefon és TV-n.</p>
       </div>
-      
-      <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
+      <div class="img-area">
+        <img class="devices" src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/device-pile-id.png" alt="" />
+        <video class="video-2" autoplay playsinline loop muted>
+          <source src="img/trailer2.mp4" type="video/mp4" />
+        </video>
+      </div>
     </div>
-  </div>
--->
+  </section>
+
+  <section class="faq text-white">
+    <p class="text-lg text-center">Gyakran Ismételt Kérdések</p>
+    <ul class="faq-accordion margin-inline text-md">
+      <li>
+        <input class="faq-input" type="radio" name="faq" id="faq-1" />
+        <label class="faq-label" for="faq-1">Donec vitae leo aliquam?<i class="fa fa-add"></i> </label>
+        <div class="faq-content">
+          <p>
+            Donec vitae leo aliquam, vulputate lorem in, porta eros. Proin facilisis lorem vitae libero tincidunt imperdiet. Praesent vitae dolor id mauris varius lacinia at at nunc. Quisque in dapibus ligula.  <br />
+            <br />
+            Quisque sit amet tempor lacus, eget iaculis nisl. Sed sit amet quam pretium, eleifend turpis ac, tempus dui. Nam sodales nec lorem et malesuada
+          </p>
+        </div>
+      </li>
+
+      <li>
+        <input class="faq-input" type="radio" name="faq" id="faq-2" />
+        <label class="faq-label" for="faq-2">Nunc vulputate eros justo?<i class="fa fa-add"></i></label>
+        <div class="faq-content">
+          <p>Nunc vulputate eros justo, posuere pulvinar justo tristique non. Fusce odio lorem, facilisis quis consequat quis, mattis et erat.</p>
+        </div>
+      </li>
+
+      <li>
+        <input class="faq-input" type="radio" name="faq" id="faq-3" />
+        <label class="faq-label" for="faq-3">Interdum et malesuada fames?<i class="fa fa-add"></i></label>
+        <div class="faq-content">
+          <p>
+            Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis scelerisque eros ac luctus suscipit. Vestibulum ac lorem velit. Fusce id vestibulum sapien. ulla faucibus neque convallis dui ultricies, pellentesque mollis lorem posuere. Phasellus vel elit pulvinar, porttitor dui vel, consequat risus. <br />
+            <br />
+            Curabitur nec venenatis ipsum, nec lacinia nibh. Phasellus feugiat lacus neque. Curabitur tempus nisi sit amet lacinia lobortis. 
+          </p>
+        </div>
+      </li>
+
+      <li>
+        <input class="faq-input" type="radio" name="faq" id="faq-4" />
+        <label class="faq-label" for="faq-4">Ut malesuada?<i class="fa fa-add"></i></label>
+        <div class="faq-content">
+          <p>Ut malesuada, augue cursus sollicitudin faucibus, risus dui tempor sapien, quis porttitor ipsum dolor ut ipsum. Duis at turpis ante. Suspendisse ligula tellus, convallis at felis at, volutpat tempus enim.</p>
+        </div>
+      </li>
+
+
+    </ul>
+  </section>
+
 
   <footer class="footer footer-black">
     <div class="footer-container margin-inline">
@@ -155,438 +812,7 @@
   </footer>
 
 
-  <div class="container">
 
-
- 
-    
-	<!--<span onclick="this.parentElement.style.display='none'" class="closebtn">
-        <div>✖ BEZÁRÁS</div>
-    </span>-->
-  
-
-    <img style="margin-top: 25px;
-    width: 100%;
-    display: block;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    transition: transform 1000ms;" class="expandKep" id="expandedImg">
-    <img style="margin-top: 25px;
-    width: 100%;
-    display: block;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    transition: transform 1000ms;" class="expandAtmenet" src="img/atmenet.png" alt="">
-        <img style="margin-top: 25px;
-        width: 100%;
-        display: block;
-        aspect-ratio: 1 / 1;
-        object-fit: cover;
-        transition: transform 1000ms;" class="expandAtmenet" src="img/atmenet.png" alt="">
-
- 
-
-	<div id="imgtext"></div>
- 
-
-  <div class="containerkee">
-    <div id="imgaltText">
-    </div>
-    <button class="button-5 youtube-link" style="background-color: white; color: black;">Lejátszás</button>
-    <button class="button-5" style="background-color: grey; color: white;">Több infó</button>
-    <button class="button-51" onclick="clickCounter()" style="background-color: green; color: white;"><i class="fa-solid fa-bookmark"></i></button>
-  </div>
-
-
-    <div>
-      <a class="navocska" style="color: #e50914;" href="fooldal.html">MAFILM</a> <a class="navocska2"href="fooldal.html">Főoldal</a> <a class="navocska2"href="filmek.html">Filmek</a> <a class="navocska2"href="listam.html">Saját lista</a>
-    </div>
-    <a class="closebtn"  href="filmek.html">Vissza</a> 
-  
-
-
-  <div class="containerss">
-    <div>
-      <img id="elsoKep" src=""/>
-    </div>
-    <div>
-      <img id="masKep" src="" />
-    </div>
-    <div>
-      <img  id="harmKep" src=""/>
-    </div>
-    <div>
-      <img id="negyKep" src="" />
-    </div>
-    <div>
-       <img id="otKep" src="" />
-    </div>
-    <div>
-      <img id="hatKep" src="" />
-   </div>
-
-  
-    </div>
-
-
-    <div class="youtube-link"> <!--data-link="wyEOwHrpZH4"-->
-        LEJÁTSZÁS
-    </div>
-
-    <div class="youtube-player-overlay ">
-      <div class="youtube-player-popup">
-          <iframe src="https://www.youtube.com/embed/" 
-          title="A YouTube video" 
-          frameborder="0" 
-          allowfullscreen></iframe>
-      </div>
-  </div>
-
-
- <!-- <div class="netflix-slider">
-    <h1>Folytasd tovább...</h1>
-    <div class="swiper-container">
-      <div class="swiper-wrapper">
-		<div class="swiper-slide"><img onclick="myFunction(this);" src="img/2.jpg" alt="wyEOwHrpZH4"></div>
-        <div class="swiper-slide"><a href="film1.html"><img src="img/2.jpg" alt="Movie Title"></a></div>
-      </div>
-      
-      <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
-    </div>
-  </div>-->
-
-
-
-
-<!--
-  <footer style="position: relative; top: 50em;" class="footer footer-black">
-    <div class="footer-container margin-inline">
-      <p>
-        MAFILM <br />
-        Made by Gabor Nagy & Adam Szalkai-Szabo
-      </p>
-      <div class="links">
-        <ul class="">
-          <li><a class="text-terms text-underline" href="">Fusce Mollis</a></li>
-          <li><a class="text-terms text-underline" href="">Aliquam</a></li>
-          <li><a class="text-terms text-underline" href="">Sed Quis</a></li>
-        </ul>
-
-        <ul>
-          <li><a class="text-terms text-underline" href="">Orci Varius</a></li>
-          <li><a class="text-terms text-underline" href="">Sed a Dictum</a></li>
-          <li><a class="text-terms text-underline" href="">Duis Efficitur</a></li>
-        </ul>
-
-        <ul>
-          <li><a class="text-terms text-underline" href="">Pellentesque</a></li>
-            <li><a class="text-terms text-underline" href="">Fusce</a></li>
-        </ul>
-
-        <a class="text-terms text-underline" href="">Cras Enim</a>
-      </div>
-
-    </div>
-  </footer>-->
-
-
-</div>
-
-
-
-
-	<!--<div id="btn"></div>-->
-
-
-  <!-- Swiper JS -->
-  <script src="package/js/swiper.min.js"></script>
-
-  <!-- Initialize Swiper -->
-  <script>
-
-const tesztecske = [];
-
-window.onload = function() {
-            fetch('/videos')
-            .then(response => response.json())
-            .then(data => {
-            
-                data.forEach(video => {
-                  document.getElementById("teszt0").innerHTML = `${video.kod}`;  
-                  //tesztecske.push(`${video.kod}*${video.nev}*${video.leiras}*${video.kep1}*${video.kep2}*${video.kep3}*${video.kep4}*${video.kep5}*${video.kep6}*${video.fokep}`);
-                });
-            })
-            .catch(error => console.error('Hiba történt:', error));
-        };
-
-        
-        
-  //document.getElementById("teszt0").innerHTML = tesztecske[0];
-
-
-
-
-    var swiper = new Swiper('.swiper-container', {
-      slidesPerView: 6,
-      spaceBetween: 10,
-      slidesPerGroup: 2,
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-    });
-
-
-  var tempArray = "";
-
-
-
-  let filmFoto = "";
-
-	function myFunction(imgs) {
-	var expandImg = document.getElementById("expandedImg");
-	var imgText = document.getElementById("imgtext");
-  var imgaltText = document.getElementById("imgaltText");
-	var btn = document.getElementById("btn");
-	
-  
-  
-  expandImg.src = imgs.src; //imgs.src
-	
-
-
-  let text = imgs.alt;
- 
-  const myArray = text.split("*");
-
-
-  var elsoKep = document.getElementById("elsoKep");
-  var masKep = document.getElementById("masKep");
-  var harmKep = document.getElementById("harmKep");
-  var negyKep = document.getElementById("negyKep");
-  var otKep = document.getElementById("otKep");
-  var hatKep = document.getElementById("hatKep");
-  elsoKep.src = myArray[3];
-  masKep.src = myArray[4];
-  harmKep.src = myArray[5];
-  negyKep.src = myArray[6];
-  otKep.src = myArray[7];
-  hatKep.src = myArray[8];
-
-
-
-  //foKep.src = myArray[9];
-
-
-
-
-
-
-
-
-
-  imgText.innerHTML = myArray[1];
-  imgaltText.innerHTML = myArray[2];
-
-  tempArray = myArray[0];
-
-
-  filmFoto = expandImg.src;
-
-
-  sessionStorage.clickcount = sessionStorage.clickcount += "@" + text;
-
-
-  //document.getElementById("demo").innerHTML = myArray[1]; 
-
-	expandImg.parentElement.style.display = "block";   ///block !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-	}
-
-
-  const folyt = sessionStorage.clickcount.split("@");
-  const index = folyt.indexOf("undefined");
-  folyt.splice(index, 1);
-
-  folyt.reverse();
-
-
-
-  var nullas = document.getElementById("nullas");
-  
-if (folyt[0] != undefined) {
-  document.getElementById("nullas").alt = folyt[0];
-  const folyt2 = folyt[0].split("*")
-  document.getElementById("nullas").src = folyt2[9];
-
-  } else {
-    console.log("un");//document.getElementById("nullas").src = "img/alt.jpg";
-  }
-
-  var egyes = document.getElementById("egyes");
-  if (folyt[1] != undefined) {
-  document.getElementById("egyes").alt = folyt[1];
-  const folyt2 = folyt[1].split("*")
-  document.getElementById("egyes").src = folyt2[9];
-  } else {
-    console.log("un");//document.getElementById("egyes").src = "img/alt.jpg";
-  }
-
-
-  var kettes = document.getElementById("kettes");
-  if (folyt[2] != undefined) {
-  document.getElementById("kettes").alt = folyt[2];
-  const folyt2 = folyt[2].split("*")
-  document.getElementById("kettes").src = folyt2[9];
-  } else {
-    console.log("un");//document.getElementById("kettes").src = "img/alt.jpg";
-  }
-
-  var harmas = document.getElementById("harmas");
-  if (folyt[3] != undefined) {
-  document.getElementById("harmas").alt = folyt[3];
-  const folyt2 = folyt[3].split("*")
-  document.getElementById("harmas").src = folyt2[9];
-  } else {
-    console.log("un");//document.getElementById("harmas").src = "img/alt.jpg";
-  }
-
-
-  var negyes = document.getElementById("negyes");
-  if (folyt[4] != undefined) {
-  document.getElementById("negyes").alt = folyt[4];
-  const folyt2 = folyt[4].split("*")
-  document.getElementById("negyes").src = folyt2[9];
-  } else {
-    console.log("un");//document.getElementById("negyes").src = "img/alt.jpg";
-  }
-
-
-
-  var otos = document.getElementById("otos");
-  if (folyt[5] != undefined) {
-  document.getElementById("otos").alt = folyt[5];
-  const folyt2 = folyt[5].split("*")
-  document.getElementById("otos").src = folyt2[9];
-  } else {
-    console.log("un");//document.getElementById("negyes").src = "img/alt.jpg";
-  }
-
-  var hatos = document.getElementById("hatos");
-  if (folyt[6] != undefined) {
-  document.getElementById("hatos").alt = folyt[6];
-  const folyt2 = folyt[6].split("*")
-  document.getElementById("hatos").src = folyt2[9];
-  } else {
-    console.log("un");//document.getElementById("negyes").src = "img/alt.jpg";
-  }
-  
-
-
-  function clickCounter() {
-  if (typeof(Storage) !== "undefined") {
-    //if (localStorage.clickcount) {
-      localStorage.clickcount = localStorage.clickcount += "*" + filmFoto;
-    /*} else {
-      localStorage.clickcount += "ELSO";
-    }*/
-    //document.getElementById("result").innerHTML = localStorage.clickcount;
-  } /*else {
-    document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
-  }*/
-}
-
-	function myFunkcio() {
-	  var x = document.getElementById("vasarlas");
-	
-	  var expandImg = document.getElementById("expandedImg");
-	
-	 var Img = document.getElementById("Img");
-
-	  document.getElementById("Img").src = "https://szbi-pg.hu/images/logo.png";//expandImg.src
-	
-		x.style.display = "block";
-	
-	}
-	
-	
-	/*
-	function show() {
-				var expandImg = document.getElementById("expandedImg");
-				var imageS = document.getElementById("image");
-				imageS.src = expandImg.src;
-				document.getElementById('image')
-					.style.display = "block";
-				document.getElementById('imgtextss')
-					.style.display = "none";
-	}*/
-	/*
-	function myFunction() {
-		  alert("A vásárlás megtörtént");
-		  }*/
-	
-
-
-
-
-      var swiper = new Swiper('.swiper-container', {
-      slidesPerView: 6,
-      spaceBetween: 10,
-      slidesPerGroup: 2,
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-    });
-
-        //document.getElementById("write").innerHTML = window.location.search;   
-        //var imgText = document.getElementById("imgtext");         
-
-       /* const YTPlayerOverlay = document.querySelector(".youtube-player-overlay");
-        const YTLinks = document.querySelectorAll(".youtube-link");
-        const YTPalyerPopup = document.querySelector(".youtube-player-popup iframe")
-
-        let links = "wyEOwHrpZH4";
-
-        YTLinks.forEach((link) => {
-            link.addEventListener("click", () => {
-                YTPlayerOverlay.classList.add("active");
-                let vidoLink = `https://www.youtube.com/embed/${link.dataset.link}`; //${link.dataset.link}
-                YTPalyerPopup.src = vidoLink;
-            });
-        });
-
-        YTPlayerOverlay.addEventListener("click", () => {
-            YTPlayerOverlay.classList.remove("active");
-        });*/
-
-
-        const YTPlayerOverlay = document.querySelector(".youtube-player-overlay");
-const YTLinks = document.querySelectorAll(".youtube-link");
-const YTPalyerPopup = document.querySelector(".youtube-player-popup iframe")
-
-//let links = "wyEOwHrpZH4";
-
-YTLinks.forEach((link) => {
-    link.addEventListener("click", () => {
-        YTPlayerOverlay.classList.add("active");
-        let vidoLink = `https://www.youtube.com/embed/${tempArray}`; //${link.dataset.link}
-        YTPalyerPopup.src = vidoLink;
-    });
-});
-
-YTPlayerOverlay.addEventListener("click", () => {
-    YTPlayerOverlay.classList.remove("active");
-});
-  </script>
-   <!-- <script src="./js/main.js"></script>-->
 </body>
+
 </html>
