@@ -305,27 +305,131 @@
   <!-- Initialize Swiper -->
   <script>
 
+
+function shuffle(array) {
+  let currentIndex = array.length;
+
+  // While there remain elements to shuffle...
+  while (currentIndex != 0) {
+
+    // Pick a remaining element...
+    let randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    // And swap it with the current element.
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex], array[currentIndex]];
+  }
+}
+
 const tesztecske = [];
+const tesztecske2 = [];
 
 window.onload = function() {
             fetch('/videos')
             .then(response => response.json())
-            .then(data => {
-            
+            .then(data => {           
                 data.forEach(video => {
-                  //document.getElementById("teszt0").innerHTML = `${video.kod}`;  
+
                   tesztecske.push(`${video.kod}*${video.nev}*${video.leiras}*${video.kep1}*${video.kep2}*${video.kep3}*${video.kep4}*${video.kep5}*${video.kep6}*${video.fokep}`);
+
+
+                  tesztecske2[0] = tesztecske[0];
+                  tesztecske2[1] = tesztecske[1];
+                  tesztecske2[2] = tesztecske[2];
+                  tesztecske2[3] = tesztecske[3];
+                  tesztecske2[4] = tesztecske[4];
+                  tesztecske2[5] = tesztecske[5];
+                  tesztecske2[6] = tesztecske[6];
+                  tesztecske2[7] = tesztecske[7];
+                  tesztecske2[8] = tesztecske[8];
+                  tesztecske2[9] = tesztecske[9];
+                  tesztecske2[10] = tesztecske[10];
+                  tesztecske2[11] = tesztecske[11];
+                  tesztecske2[12] = tesztecske[12];
+                  tesztecske2[13] = tesztecske[13];
+                  //console.log(tesztecske2);
+       
                 });
-            })
-            .catch(error => console.error('Hiba történt:', error));
+
+                function shuffleArray(array) {
+                  for (let i = array.length - 1; i > 0; i--) {
+                      const j = Math.floor(Math.random() * (i + 1));
+                      [array[i], array[j]] = [array[j], array[i]];
+                  }
+                }
+
+                shuffleArray(tesztecske);
+                
+                var e1 = document.getElementById("e1");
+                e1.alt = tesztecske[0];
+                const t1 = tesztecske[0].split("*");
+                e1.src = t1[9];
+
+                var e2 = document.getElementById("e2");
+                e2.alt = tesztecske[1];
+                const t2 = tesztecske[1].split("*");
+                e2.src = t2[9];
+
+                var e3 = document.getElementById("e3");
+                e3.alt = tesztecske[2];
+                const t3 = tesztecske[2].split("*");
+                e3.src = t3[9];
+
+                var e4 = document.getElementById("e4");
+                e4.alt = tesztecske[3];
+                const t4 = tesztecske[3].split("*");
+                e4.src = t4[9];
+
+
+                var e5 = document.getElementById("e5");
+                e5.alt = tesztecske[4];
+                const t5 = tesztecske[4].split("*");
+                e5.src = t5[9];
+
+                var e6 = document.getElementById("e6");
+                e6.alt = tesztecske[5];
+                const t6 = tesztecske[5].split("*");
+                e6.src = t6[9];
+
+                var e7 = document.getElementById("e7");
+                e7.alt = tesztecske[6];
+                const t7 = tesztecske[6].split("*");
+                e7.src = t7[9];
+
+                var e8 = document.getElementById("e8");
+                e8.alt = tesztecske[7];
+                const t8 = tesztecske[7].split("*");
+                e8.src = t8[9];
+
+                var e9 = document.getElementById("e9");
+                e9.alt = tesztecske[8];
+                const t9 = tesztecske[8].split("*");
+                e9.src = t9[9];
+
+                var e10 = document.getElementById("e10");
+                e10.alt = tesztecske[9];
+                const t10 = tesztecske[9].split("*");
+                e10.src = t10[9];
+
+                var e11 = document.getElementById("e11");
+                e11.alt = tesztecske[10];
+                const t11 = tesztecske[10].split("*");
+                e11.src = t11[9];
+
+                var e12 = document.getElementById("e12");
+                e12.alt = tesztecske[11];
+                const t12 = tesztecske[11].split("*");
+                e12.src = t12[9];
+
+                var e13 = document.getElementById("e13");
+                e13.alt = tesztecske[12];
+                const t13 = tesztecske[12].split("*");
+                e13.src = t13[9];
+
+            }).catch(error => console.error('Hiba történt:', error));
         };
 
-  
-console.log(tesztecske)
-
-        
-        
-  //document.getElementById("teszt0").innerHTML = tesztecske[0];
 
 
 
