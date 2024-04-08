@@ -348,6 +348,7 @@ window.onload = function() {
                   tesztecske2[11] = tesztecske[11];
                   tesztecske2[12] = tesztecske[12];
                   tesztecske2[13] = tesztecske[13];
+                  tesztecske2[14] = tesztecske[14];
                   //console.log(tesztecske2);
        
                 });
@@ -359,7 +360,7 @@ window.onload = function() {
                   }
                 }
 
-                shuffleArray(tesztecske);
+               // shuffleArray(tesztecske);
                 
                 var e1 = document.getElementById("e1");
                 e1.alt = tesztecske[0];
@@ -426,6 +427,11 @@ window.onload = function() {
                 e13.alt = tesztecske[12];
                 const t13 = tesztecske[12].split("*");
                 e13.src = t13[9];
+
+                var e14 = document.getElementById("e14");
+                e14.alt = tesztecske[13];
+                const t14 = tesztecske[13].split("*");
+                e14.src = t14[9];
 
             }).catch(error => console.error('Hiba történt:', error));
         };
